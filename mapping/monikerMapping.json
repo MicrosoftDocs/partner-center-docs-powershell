@@ -5,7 +5,7 @@
         "conceptualTocUrl": "/powershell/partnercenter/toc.json",
         "referenceTocUrl": "/powershell/module/partnercenter/toc.json",
         "modules": {
-            "Partner-Center": {}
+            "PartnerCenter": {}
         }
     }
 }

@@ -47,14 +47,14 @@
                 "partnercenterps-*/**/*.md": "lesliep"
             },
             "ms.service": {
-                "partnercenterps-*/**/*.md": "partner-center"
+                "partnercenterps-*/**/*.md": "partnercenter"
             },
             "ms.topic": {
                 "partnercenterps-*/**/*.md": "reference",
                 "docs-conceptual/**/*.md": "article"
             },
             "ms.date": {
-                "partnercenterps-*/**/*.md": "10/22/2018"
+                "partnercenterps-*/**/*.md": "11/28/2018"
             }
         },
         "globalMetadata": {
