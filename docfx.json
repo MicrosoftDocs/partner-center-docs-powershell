@@ -20,7 +20,7 @@
                 ],
                 "src": "docs-conceptual/partnercenterps-1.5",
                 "version": "partnercenterps-1.5",
-                "dest": "partnercenter"
+                "dest": "module/partnercenter"
             },
             {
                 "files": [
