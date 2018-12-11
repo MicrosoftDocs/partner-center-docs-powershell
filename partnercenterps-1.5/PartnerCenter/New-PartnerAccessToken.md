@@ -16,14 +16,15 @@ Generate a new access token that can be used to access Partner Center.
 
 ### UserCredential (Default)
 ```powershell
-New-PartnerAccessToken -ApplicationId <String> [-Credential <PSCredential>] [-Environment <EnvironmentName>]
- [-TokenCache <TokenCache>] [<CommonParameters>]
+New-PartnerAccessToken -ApplicationId <String> [-Consent] [-Credential <PSCredential>]
+ [-Environment <EnvironmentName>] [-RefreshToken <String>] -Resource <String> [-TenantId <String>]
+ [<CommonParameters>]
 ```
 
 ### ServicePrincipal
-```
-New-PartnerAccessToken -Credential <PSCredential> [-Environment <EnvironmentName>] [-ServicePrincipal]
- -TenantId <String> [-TokenCache <TokenCache>] [<CommonParameters>]
+```powershell
+New-PartnerAccessToken [-Consent] -Credential <PSCredential> [-Environment <EnvironmentName>]
+ [-RefreshToken <String>] -Resource <String> [-ServicePrincipal] [-TenantId <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +37,7 @@ The New-PartnerAccessToken command generates a new access token that can be used
 PS C:\> $appId = '<AAD-AppId>'
 PS C:\> $appSecret = '<AAD-AppSecret>' | ConvertTo-SecureString -AsPlainText -Force
 PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId $appSecret
-PS C:\> New-PartnerAccessToken -Credential $credential -ServicePrincipal -TenantId '<TenantId>'
+PS C:\> New-PartnerAccessToken -Credential $credential -Resource https://api.partnercenter.microsoft.com -ServicePrincipal -TenantId '<TenantId>'
 ```
 
 Generates a new access token using a service principal for authentication.
@@ -44,10 +45,30 @@ Generates a new access token using a service principal for authentication.
 ### Example 2
 ```powershell
 PS C:\> $credential = Get-Credential
-PS C:\> New-PartnerAccessToken -ApplicationId '<AAD-AppId>' -Credential $credential -TenantId '<TenantId>'
+PS C:\> New-PartnerAccessToken -ApplicationId '<AAD-AppId>' -Credential $credential -Resource https://api.partnercenter.microsoft.com -TenantId '<TenantId>'
 ```
 
-Generate a new access token using user credentials for authentication.
+Generates a new access token using user credentials for authentication.
+
+### Example 3
+```powershell
+PS C:\> $appId = '<AAD-AppId>'
+PS C:\> $appSecret = '<AAD-AppSecret>' | ConvertTo-SecureString -AsPlainText -Force
+PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId $appSecret
+PS C:\> $token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com -ServicePrincipal
+```
+
+Performs the secure app model partner consent process. The `$token.RefreshToken` value should be stored in a secure location such as Azure Key vault. The Azure AD application used in this example much have `urn:ietf:wg:oauth:2.0:oob` configured as one of the reply URLs.
+
+### Example 4
+```powershell
+PS C:\> $appId = '<AAD-AppId>'
+PS C:\> $appSecret = '<AAD-AppSecret>' | ConvertTo-SecureString -AsPlainText -Force
+PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId $appSecret
+PS C:\> New-PartnerAccessToken -RefreshToken '<Refresh-Token-Value>' -Resource https://api.partnercenter.microsoft.com -Credential $credential -ServicePrincipal
+```
+
+Generates a new access token using the refresh token. The Azure AD application used in this example much have `urn:ietf:wg:oauth:2.0:oob` configured as one of the reply URLs.
 
 ## PARAMETERS
 
@@ -60,6 +81,21 @@ Parameter Sets: UserCredential
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Consent
+A flag that indicates that the intention is to perform the partner consent process.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -109,6 +145,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RefreshToken
+The refresh token to use in the refresh flow.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Resource
+The identifier of the target resource that is the recipient of the requested token.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ServicePrincipal
 A flag indicating that a service principal will be used to authenticate.
 
@@ -129,21 +195,6 @@ The Azure AD domain or tenant identifier.
 
 ```yaml
 Type: String
-Parameter Sets: ServicePrincipal
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TokenCache
-The token cache to be used when requesting an access token.
-
-```yaml
-Type: TokenCache
 Parameter Sets: (All)
 Aliases:
 
