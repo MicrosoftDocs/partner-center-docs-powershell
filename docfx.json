@@ -20,16 +20,16 @@
                 ],
                 "src": "docs-conceptual/partnercenterps-1.5",
                 "version": "partnercenterps-1.5",
-                "dest": "module/partnercenter"
+                "dest": "partnercenter"
             },
             {
                 "files": [
-                    "toc.yml"
+                  "toc.yml"
                 ],
-                "src": "pc-breadcrumb",
+                "src": "partnercenterps-1.5",
                 "version": "partnercenterps-1.5",
-                "dest": "partnercenter/bread"
-            }
+                "dest": "module/powershell"
+              }
         ],
         "versions": {
             "partnercenterps-1.5": {
