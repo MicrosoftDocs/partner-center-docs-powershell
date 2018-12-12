@@ -1,5 +1,5 @@
 ---
-title:  Partner Center PowerShell
+title:  Partner Center PowerShell | Microsoft Docs
 description: How to install the Partner Center PowerShell module.
 services: partner-center
 documentationcenter: ''
