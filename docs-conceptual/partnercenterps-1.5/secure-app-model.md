@@ -23,7 +23,7 @@ Microsoft is introducing a secure and scalable framework for authenticating Clou
 
 ## Partner Consent
 
-With this new model partners will need to perform a consent process. Through this process an access token will be requested from Azure Active Directory using an authorization code. The result returned from that request will include an access token, refresh token and additional information. The refresh token value should be stored in a secure repository such as Azure Key Vault. It will be used when requesting an access token to interact with the Partner Center API. You can use the [New-PartnerAccessToken](../../partnercenterps-1.5/PartnerCenter/NewPartnerAccessToken.md) command to perform the consent process.
+With this new model partners will need to perform a consent process. Through this process an access token will be requested from Azure Active Directory using an authorization code. The result returned from that request will include an access token, refresh token and additional information. The refresh token value should be stored in a secure repository such as Azure Key Vault. It will be used when requesting an access token to interact with the Partner Center API. You can use the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/new-partneraccesstoken) command to perform the consent process.
 
 ### Azure AD Application
 
@@ -144,18 +144,18 @@ Write-Host "ApplicationSecret   = $($password.Value)"
 
 ### Performing the Consent
 
-Next you will need to invoke the [New-PartnerAccessToken](../../partnercenterps-1.5/PartnerCenter/NewPartnerAccessToken.md) command as shown below to perform the consent process.
+Next you will need to invoke the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/new-partneraccesstoken) command as shown below to perform the consent process.
 
 ```powershell
 $credential = Get-Credential
 $token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com -ServicePrincipal
 ```
 
-When the `Get-Credential` command is invoked you will be prompted to enter a username and password. Specify the application identifier as the username and the application secret as the password. When then [New-PartnerAccessToken](../../partnercenterps-1.5/PartnerCenter/NewPartnerAccessToken.md) command is invoked you will be prompted for credentials once again. This time you will need to specify the credentials for the service account that you will be using. Please note that this should be a partner account with the appropriate permissions. After the successfully execution of the command you will find that the `$token` variable contains the response from Azure Active Directory for a token. Included in this response is a refresh token, you will want to store this value in a secure repository such as Azure Key Vault or a similar service.
+When the `Get-Credential` command is invoked you will be prompted to enter a username and password. Specify the application identifier as the username and the application secret as the password. When then [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/new-partneraccesstoken) command is invoked you will be prompted for credentials once again. This time you will need to specify the credentials for the service account that you will be using. Please note that this should be a partner account with the appropriate permissions. After the successfully execution of the command you will find that the `$token` variable contains the response from Azure Active Directory for a token. Included in this response is a refresh token, you will want to store this value in a secure repository such as Azure Key Vault or a similar service.
 
 ## Using the Refresh Token
 
-Using the [Connect-PartnerCenter](../../partnercenterps-1.5/PartnerCenter/ConnectPartnerCenter.md) command you can connect to Partner Center. You will need to obtain the refresh token value from the secure repository where you stored it. Execute the following commands to request an access token and use it when connecting to Partner Center.
+Using the [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/connect-partnercenter) command you can connect to Partner Center. You will need to obtain the refresh token value from the secure repository where you stored it. Execute the following commands to request an access token and use it when connecting to Partner Center.
 
 ```powershell
 $refreshToken = 'Enter the refresh token value here'
