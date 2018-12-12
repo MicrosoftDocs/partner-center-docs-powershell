@@ -1,0 +1,10 @@
+- name: Docs
+  href: /
+  homepage: /
+  items:
+  - name: Partner Center
+    tocHref: /powershell/partnercenter/
+    topicHref: /powershell/partnercenter/overview
+  - name: Reference
+    tocHref: /powershell/module/partnercenter/
+    topicHref: /powershell/module/partnercenter

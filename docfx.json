@@ -56,11 +56,10 @@
     "globalMetadata": {
       "showPowerShellPicker": "true",
       "apiPlatform": "powershell",
-      "brand": "azure",
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/partner-center-docs-powershell",
       "feedback_product_url": "https://github.com/Microsoft/Partner-Center-PowerShell/issues/new",
-      "breadcrumb_path": "/powershell/bread/toc.json",
+      "breadcrumb_path": "/powershell/partnercenter/breadcrumb/toc.json",
       "ms.devlang": "powershell"
     },
     "dest": "partnercenterps"
