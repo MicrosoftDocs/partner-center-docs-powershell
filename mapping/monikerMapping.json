@@ -3,9 +3,6 @@
         "packageRoot": "partnercenterps-1.5",
         "conceptualToc": "docs-conceptual/partnercenterps-1.5/toc.yml",
         "conceptualTocUrl": "/powershell/partnercenter/toc.json",
-        "referenceTocUrl": "/powershell/module/partnercenter/toc.json",
-        "modules": {
-            "PartnerCenter": {}
-        }
+        "referenceTocUrl": "/powershell/module/partnercenter/toc.json"
     }
 }

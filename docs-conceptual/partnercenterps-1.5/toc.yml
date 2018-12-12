@@ -3,3 +3,5 @@
   items: 
   - name: Install the Partner Center PowerShell module
     href: install.md
+  - name: Secure Application Model
+    href: secure-app-model.md

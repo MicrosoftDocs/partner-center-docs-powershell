@@ -1,4 +1,3 @@
-
 - name: Docs
   href: /
   homepage: /
@@ -8,5 +7,4 @@
     topicHref: /powershell/partnercenter/overview
   - name: Reference
     tocHref: /powershell/module/partnercenter/
-    topicHref: /powershell/module/partnercenter/partner-center/partnercenter
- 
+    topicHref: /powershell/module/partnercenter

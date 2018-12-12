@@ -10,7 +10,7 @@ schema: 2.0.0
 # Connect-PartnerCenter
 
 ## SYNOPSIS
-Connect to Partner Center with an authenticated account for use with cmdlet requests.
+Connects to Partner Center with an authenticated account for use with cmdlet requests.
 
 ## SYNTAX
 
