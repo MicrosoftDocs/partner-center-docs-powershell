@@ -117,7 +117,7 @@ $graphAppAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
             Type = "Role"}
 }
 
-$partnerCenterAppAccess = = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
+$partnerCenterAppAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
     ResourceAppId = "fa3d9a0c-3fb0-42cc-9193-47c7ecd2edbd";
     ResourceAccess =
         [Microsoft.Open.AzureAD.Model.ResourceAccess]@{
