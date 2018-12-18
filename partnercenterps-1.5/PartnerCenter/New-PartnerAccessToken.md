@@ -36,7 +36,7 @@ The New-PartnerAccessToken command generates a new access token that can be used
 ```powershell
 PS C:\> $appId = '<AAD-AppId>'
 PS C:\> $appSecret = '<AAD-AppSecret>' | ConvertTo-SecureString -AsPlainText -Force
-PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId $appSecret
+PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId, $appSecret
 PS C:\> New-PartnerAccessToken -Credential $credential -Resource https://api.partnercenter.microsoft.com -ServicePrincipal -TenantId '<TenantId>'
 ```
 
@@ -54,7 +54,7 @@ Generates a new access token using user credentials for authentication.
 ```powershell
 PS C:\> $appId = '<AAD-AppId>'
 PS C:\> $appSecret = '<AAD-AppSecret>' | ConvertTo-SecureString -AsPlainText -Force
-PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId $appSecret
+PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId, $appSecret
 PS C:\> $token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com -ServicePrincipal
 ```
 
@@ -64,7 +64,7 @@ Performs the secure app model partner consent process. The `$token.RefreshToken`
 ```powershell
 PS C:\> $appId = '<AAD-AppId>'
 PS C:\> $appSecret = '<AAD-AppSecret>' | ConvertTo-SecureString -AsPlainText -Force
-PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId $appSecret
+PS C:\> $credential = New-Object System.Management.Automation.PSCredential $appId, $appSecret
 PS C:\> New-PartnerAccessToken -RefreshToken '<Refresh-Token-Value>' -Resource https://api.partnercenter.microsoft.com -Credential $credential -ServicePrincipal
 ```
 
