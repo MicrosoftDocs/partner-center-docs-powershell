@@ -13,7 +13,7 @@ ms.tgt_pltfrm: na
 ms.devlang: powershell
 ms.custom: posh-docs-conceptual
 ms.topic: hero-article
-ms.date: 12/12/2018
+ms.date: 1/2/2019
 ms.author: iswillia
 ---
 
