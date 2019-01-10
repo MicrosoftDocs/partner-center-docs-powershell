@@ -34,11 +34,11 @@ To this you will need an Azure AD application that has `urn:ietf:wg:oauth:2.0:oo
     .SYNOPSIS
         This script will create the require Azure AD application.
     .EXAMPLE
-        .\Create-AzureADApplication.ps1 -ConfigurePreconsent $true -DisplayName "Partner Center Web App"
+        .\Create-AzureADApplication.ps1 -ConfigurePreconsent -DisplayName "Partner Center Web App"
 
-        .\Create-AzureADApplication.ps1 -ConfigurePreconsent $true -DisplayName "Partner Center Web App" -TenantId eb210c1e-b697-4c06-b4e3-8b104c226b9a
+        .\Create-AzureADApplication.ps1 -ConfigurePreconsent -DisplayName "Partner Center Web App" -TenantId eb210c1e-b697-4c06-b4e3-8b104c226b9a
 
-        .\Create-AzureADApplication.ps1 -ConfigurePreconsent $true -DisplayName "Partner Center Web App" -TenantId tenant01.onmicrosoft.com
+        .\Create-AzureADApplication.ps1 -ConfigurePreconsent -DisplayName "Partner Center Web App" -TenantId tenant01.onmicrosoft.com
     .PARAMETER ConfigurePreconsent
         Flag indicating whether or not the Azure AD application should be configured for preconsent.
     .PARAMETER DisplayName
