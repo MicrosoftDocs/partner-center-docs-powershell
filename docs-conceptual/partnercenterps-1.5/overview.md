@@ -3,10 +3,10 @@ title: Overview of Partner Center PowerShell | Microsoft Docs
 description: An overview of Partner Center with links to installation and configuration.
 author: iswillia
 ms.author: iswillia
-manager: lesliep
+manager: jegraves
 ms.devlang: powershell
 ms.topic: conceptual
-ms.manager: lesliep
+ms.manager: jegraves
 ms.date: 10/27/2018
 ---
 
