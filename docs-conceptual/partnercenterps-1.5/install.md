@@ -4,7 +4,7 @@ description: How to install the Partner Center PowerShell module.
 services: partner-center
 documentationcenter: ''
 author: iswillia
-manager: lesliep
+manager: jegraves
 editor: ''
 
 ms.service: partner-center

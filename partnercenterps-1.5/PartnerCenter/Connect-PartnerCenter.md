@@ -16,14 +16,13 @@ Connects to Partner Center with an authenticated account for use with cmdlet req
 
 ### UserCredential (Default)
 ```powershell
-Connect-PartnerCenter -ApplicationId <String> [-Credential <PSCredential>] [-Environment <EnvironmentName>]
- [<CommonParameters>]
+Connect-PartnerCenter -ApplicationId <String> [-Environment <EnvironmentName>] [<CommonParameters>]
 ```
 
 ### AccessToken
 ```powershell
-Connect-PartnerCenter -AccessToken <String> -AccessTokenExpiresOn <DateTimeOffset> -ApplicationId <String>
- [-Environment <EnvironmentName>] -TenantId <String> [<CommonParameters>]
+Connect-PartnerCenter -AccessToken <String> -ApplicationId <String> [-Environment <EnvironmentName>]
+ -TenantId <String> [<CommonParameters>]
 ```
 
 ### ServicePrincipal
@@ -58,7 +57,7 @@ Connect to Partner Center using the specified application identifier during auth
 
 ```powershell
 PS C:\> $credential = Get-Credential
-PS C:\> Connect-PartnerCenter -Credential $credential -ServicePrincipal -TenantId '<TenantId>'
+PS C:\> Connect-PartnerCenter -Credential $credential -ServicePrincipal -TenantId '<AppId>'
 ```
 
 Connects to Partner Center using app only authentication. When prompted for credential specify the application identifier for the username and the application secret for the password.
@@ -70,21 +69,6 @@ The access token for Partner Center.
 
 ```yaml
 Type: String
-Parameter Sets: AccessToken
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AccessTokenExpiresOn
-The date and time when the token for Partner Center expires.
-
-```yaml
-Type: DateTimeOffset
 Parameter Sets: AccessToken
 Aliases:
 
@@ -112,18 +96,6 @@ Accept wildcard characters: False
 
 ### -Credential
 User credentials to be used when connecting to Partner Center.
-
-```yaml
-Type: PSCredential
-Parameter Sets: UserCredential
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ```yaml
 Type: PSCredential
