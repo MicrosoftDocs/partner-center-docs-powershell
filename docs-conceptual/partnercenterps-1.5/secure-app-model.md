@@ -155,7 +155,7 @@ Next you will need to invoke the [New-PartnerAccessToken](https://docs.microsoft
 
 ```powershell
 $credential = Get-Credential
-$token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com -ServicePrincipal
+$token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com
 ```
 
 When the command is invoked, you will be prompted to enter a username and password. Specify the application identifier as the username and the application secret as the password. When then New-PartnerAccessToken command is invoked, you will be prompted for credentials once again. This time you will need to specify the credentials for the service account that you will be using. The service account should be a partner account with the appropriate permissions. After the successful execution of the command, you will find that the `$token` variable contains the response from Azure Active Directory for a token. In the response is a refresh token, you will want to store this value in a secure repository such as Azure Key Vault or a similar service.
@@ -168,7 +168,7 @@ Using the [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/p
 $refreshToken = 'Enter the refresh token value here'
 
 $credential = Get-Credential
-$pcToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://api.partnercenter.microsoft.com -Credential $credential -ServicePrincipal
+$pcToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://api.partnercenter.microsoft.com -Credential $credential
 $tenantId = '<Your Tenant Id>'
 
 Connect-PartnerCenter -AccessToken $pcToken.AccessToken -ApplicationId $appId -TenantId $tenantId
@@ -184,8 +184,8 @@ The Az and Azure PowerShell modules both support the ability to authenticate usi
 $credential = Get-Credential
 $refreshToken = 'Your-Refresh-Token-Value'
 
-$azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://azure.management.com/ -Credential $credential -ServicePrincipal
-$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential -ServicePrincipal
+$azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://azure.management.com/ -Credential $credential
+$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential
 
 # Az Module
 Connect-AzAccount -AccessToken $token.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
@@ -202,8 +202,8 @@ The MSOnline PowerShell module support authentication using access tokens. The f
 $credential = Get-Credential
 $refreshToken = 'Your-Refresh-Token-Value'
 
-$aadGraphToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.windows.net -Credential $credential -ServicePrincipal
-$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential -ServicePrincipal
+$aadGraphToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.windows.net -Credential $credential 
+$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential
 
 Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAccessToken $graphToken.AccessToken
 ```

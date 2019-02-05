@@ -27,8 +27,7 @@ Connect-PartnerCenter -AccessToken <String> -ApplicationId <String> [-Environmen
 
 ### ServicePrincipal
 ```powershell
-Connect-PartnerCenter -Credential <PSCredential> [-Environment <EnvironmentName>] [-ServicePrincipal]
- -TenantId <String> [<CommonParameters>]
+Connect-PartnerCenter -Credential <PSCredential> [-Environment <EnvironmentName>] -TenantId <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +56,7 @@ Connect to Partner Center using the specified application identifier during auth
 
 ```powershell
 PS C:\> $credential = Get-Credential
-PS C:\> Connect-PartnerCenter -Credential $credential -ServicePrincipal -TenantId '<AppId>'
+PS C:\> Connect-PartnerCenter -Credential $credential -TenantId '<TenantId>'
 ```
 
 Connects to Partner Center using app only authentication. When prompted for credential specify the application identifier for the username and the application secret for the password.
@@ -119,21 +118,6 @@ Aliases: EnvironmentName
 Accepted values: GlobalCloud, ChinaCloud, GermanCloud, USGovernment
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServicePrincipal
-A flag indiicating that a service principal will be used to authenticate.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ServicePrincipal
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
