@@ -1,6 +1,4 @@
 ---
-content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/PartnerCenter.md
-original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/PartnerCenter.md
 Module Name: PartnerCenter
 Module Guid: 70cb9a9e-1491-403a-8a2f-63e1afe7dfee
 Download Help Link: none
@@ -8,8 +6,7 @@ Help Version: 1.0
 Locale: en-US
 ---
 
-# Microsoft Partner Center PowerShell Module
-
+# PartnerCenter Module
 ## Description
 These are the cmdlets in the Partner Center PowerShell module.
 
@@ -21,7 +18,7 @@ Adds a new line item to the specified cart.
 Adds a customer user to a specified role.
 
 ### [Connect-PartnerCenter](Connect-PartnerCenter.md)
-Connect to Partner Center with an authenticated account for use with cmdlet requests.
+Connects to Partner Center with an authenticated account for use with cmdlet requests.
 
 ### [Disconnect-PartnerCenter](Disconnect-PartnerCenter.md)
 Disconnects the current session from Partner Center.
@@ -68,9 +65,6 @@ Gets a list of device batches for the specified customer identifier.
 ### [Get-PartnerCustomerEntitlement](Get-PartnerCustomerEntitlement.md)
 Gets a collection of entitlements.
 
-### [Get-PartnerCustomerIndirectReseller](Get-PartnerCustomerIndirectReseller.md)
-Gets all of the indirect resellers associated with the specified customer. This command will only function for indirect providers.
-
 ### [Get-PartnerCustomerLicenseDeploymentInfo](Get-PartnerCustomerLicenseDeploymentInfo.md)
 Gets aggregated data on deployment for a specified customer.
 
@@ -91,6 +85,9 @@ Gets a list of licenses available to users of the specified customer.
 
 ### [Get-PartnerCustomerSubscription](Get-PartnerCustomerSubscription.md)
 Gets a list or a single customer subscription.
+
+### [Get-PartnerCustomerSubscriptionAddOn](Get-PartnerCustomerSubscriptionAddOn.md)
+Gets the purchased add-ons for the specified subscription.
 
 ### [Get-PartnerCustomerSubscriptionProvisioningStatus](Get-PartnerCustomerSubscriptionProvisioningStatus.md)
 Gets the provisioning status for the specified subscription.
@@ -192,13 +189,16 @@ Gets a list of service request topics.
 Gets the partner's support profile.
 
 ### [New-PartnerAccessToken](New-PartnerAccessToken.md)
-Generate a new access token that can be used to access Partner Center.
+Acquires an access token from the authority.
 
 ### [New-PartnerCustomer](New-PartnerCustomer.md)
 Creates a new customer.
 
 ### [New-PartnerCustomerAgreement](New-PartnerCustomerAgreement.md)
 Confirms the customer acceptance of the Microsoft Cloud agreement.
+
+### [New-PartnerCustomerApplicationConsent](New-PartnerCustomerApplicationConsent.md)
+Creates a new application consent for the specified customer.
 
 ### [New-PartnerCustomerCart](New-PartnerCustomerCart.md)
 Creates an order for a customer.
@@ -261,7 +261,7 @@ Update a subscription's support contact to one of the partner's value added rese
 Updates the specified customer user account.
 
 ### [Set-PartnerCustomerUserLicense](Set-PartnerCustomerUserLicense.md)
-Adds or removes licenses for a Microsoft online service to the list of assigned licenses for a user. 
+Adds or removes licenses for a Microsoft online service to the list of assigned licenses for a user.
 
 ### [Set-PartnerLegalProfile](Set-PartnerLegalProfile.md)
 Updates the partner's legal profile.

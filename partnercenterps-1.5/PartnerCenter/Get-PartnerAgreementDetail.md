@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerAgreementDetail.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version:
+online version: https://docs.microsoft.com/powershell/module/partnercenterGet-PartnerAgreementDetail
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerAgreementDetail.md
 schema: 2.0.0
 ---
@@ -15,7 +15,7 @@ Gets the agreement metadata for the Microsoft Cloud Agreement.
 ## SYNTAX
 
 ```powershell
-Get-PartnerAgreementDetail
+Get-PartnerAgreementDetail [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,6 +31,9 @@ PS C:\> Get-PartnerAgreementDetail
 Gets the agreement metadata for the Microsoft Cloud Agreement.
 
 ## PARAMETERS
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

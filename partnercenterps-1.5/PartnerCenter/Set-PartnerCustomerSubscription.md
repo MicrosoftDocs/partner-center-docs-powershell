@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerCustomerSubscription.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version:
+online version: https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerCustomerSubscription
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerCustomerSubscription.md
 schema: 2.0.0
 ---
@@ -15,14 +15,14 @@ Updates the specified customer subscription.
 ## SYNTAX
 
 ### Customer
-```powershell
+```
 Set-PartnerCustomerSubscription [-AutoRenew <Boolean>] [-BillingCycle <BillingCycleType>] -CustomerId <String>
  [-FriendlyName <String>] [-Quantity <Int32>] [-Status <SubscriptionStatus>] -SubscriptionId <String> [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### CustomerObject
-```powershell
+```
 Set-PartnerCustomerSubscription [-AutoRenew <Boolean>] -InputObject <PSCustomer>
  [-BillingCycle <BillingCycleType>] [-FriendlyName <String>] [-Quantity <Int32>] [-Status <SubscriptionStatus>]
  -SubscriptionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]

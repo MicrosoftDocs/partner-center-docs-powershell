@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerSubscription.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version:
+online version: https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscription
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerSubscription.md
 schema: 2.0.0
 ---
@@ -15,13 +15,13 @@ Gets a list or a single customer subscription.
 ## SYNTAX
 
 ### ByCustomer (Default)
-```powershell
+```
 Get-PartnerCustomerSubscription -CustomerId <String> [-OrderId <String>] [-MpnId <String>]
  [-SubscriptionId <String>] [<CommonParameters>]
 ```
 
 ### ByCustomerObject
-```powershell
+```
 Get-PartnerCustomerSubscription -InputObject <PSCustomer> [-OrderId <String>] [-MpnId <String>]
  [-SubscriptionId <String>] [<CommonParameters>]
 ```

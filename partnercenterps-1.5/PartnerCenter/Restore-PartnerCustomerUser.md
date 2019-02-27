@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Restore-PartnerCustomerUser.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version:
+online version: https://docs.microsoft.com/powershell/module/partnercenter/Restore-PartnerCustomerUser
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Restore-PartnerCustomerUser.md
 schema: 2.0.0
 ---
@@ -15,12 +15,12 @@ Restores a previously removed customer user from the customer's tenant.
 ## SYNTAX
 
 ### ByUserId (Default)
-```powershell
+```
 Restore-PartnerCustomerUser [-CustomerId] <String> -UserId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByUpn
-```powershell
+```
 Restore-PartnerCustomerUser [-CustomerId] <String> -UserPrincipalName <String> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```

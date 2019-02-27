@@ -1,34 +1,35 @@
 ---
-content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerTrialConversion.md
+content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerSubscriptionAddOn.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version: https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerTrialConversion
-original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerTrialConversion.md
+online version: https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionAddOn
+original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerSubscriptionAddOn.md
+
 schema: 2.0.0
 ---
 
-# Get-PartnerCustomerTrialConversion
+# Get-PartnerCustomerSubscriptionAddOn
 
 ## SYNOPSIS
-Gets a list of trial conversions available for the specified subscription.
+Gets the purchased add-ons for the specified subscription.
 
 ## SYNTAX
 
 ```powershell
-Get-PartnerCustomerTrialConversion -CustomerId <String> -SubscriptionId <String> [<CommonParameters>]
+Get-PartnerCustomerSubscriptionAddOn -CustomerId <String> -SubscriptionId <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets a list of trial conversions available for the specified subscription.
+Gets the purchased add-ons for the specified subscription.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-PartnerCustomerTrialConversion -CustomerId 46a62ece-10ad-42e5-b3f1-b2ed53e6fc08 -SubscriptionId 4eaffa18-12f6-441e-b16d-cc9f4a90cfb8
+PS C:\> Get-PartnerCustomerSubscriptionAddOn -CustomerId '46a62ece-10ad-42e5-b3f1-b2ed53e6fc08' -SubscriptionId '775440e2-3a09-4685-bc9e-f1638955c41e'
 ```
 
-Gets a list of trial conversions available for the specified subscription.
+Gets the add-ons for the specified subscription.
 
 ## PARAMETERS
 
@@ -71,7 +72,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Store.PartnerCenter.PowerShell.Models.CustomerTrialConversion.PSCustomerTrialConversion
+### Microsoft.Store.PartnerCenter.PowerShell.Models.Subscriptions.PSSubscription
 
 ## NOTES
 

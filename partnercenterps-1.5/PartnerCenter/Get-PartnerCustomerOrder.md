@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerOrder.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version:
+online version: https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerOrder
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerCustomerOrder.md
 schema: 2.0.0
 ---
@@ -14,19 +14,19 @@ Gets either a specific order or a list of order for the specified customer.
 
 ## SYNTAX
 
+### ByBillingCycle
+```
+Get-PartnerCustomerOrder -BillingCycle <BillingCycleType> -CustomerId <String> [<CommonParameters>]
+```
+
 ### ByCustomerId
-```powershell
+```
 Get-PartnerCustomerOrder -CustomerId <String> [<CommonParameters>]
 ```
 
 ### ByOrderId
-```powershell
-Get-PartnerCustomerOrder -CustomerId <String> -OrderId <String> [<CommonParameters>]
 ```
-
-### ByBillingCycle
-```powershell
-Get-PartnerCustomerOrder -CustomerId <String> -BillingCycle <BillingCycleType> [<CommonParameters>]
+Get-PartnerCustomerOrder -CustomerId <String> -OrderId <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

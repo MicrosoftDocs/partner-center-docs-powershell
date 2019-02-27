@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerCustomer.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version:
+online version: https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerCustomer
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerCustomer.md
 schema: 2.0.0
 ---
@@ -15,7 +15,7 @@ Updates a customer's billing profile, including the address associated with the 
 ## SYNTAX
 
 ### Customer (Default)
-```powershell
+```
 Set-PartnerCustomer [-BillingAddressLine1 <String>] [-BillingAddressLine2 <String>]
  [-BillingAddressCity <String>] [-BillingAddressCountry <String>] [-BillingAddressPhoneNumber <String>]
  [-BillingAddressPostalCode <String>] [-BillingAddressRegion <String>] [-BillingAddressState <String>]
@@ -23,7 +23,7 @@ Set-PartnerCustomer [-BillingAddressLine1 <String>] [-BillingAddressLine2 <Strin
 ```
 
 ### CustomerObject
-```powershell
+```
 Set-PartnerCustomer -InputObject <PSCustomer> [-BillingAddressLine1 <String>] [-BillingAddressLine2 <String>]
  [-BillingAddressCity <String>] [-BillingAddressCountry <String>] [-BillingAddressPhoneNumber <String>]
  [-BillingAddressPostalCode <String>] [-BillingAddressRegion <String>] [-BillingAddressState <String>]

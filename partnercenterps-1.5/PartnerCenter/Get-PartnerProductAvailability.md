@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerProductAvailability.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version:
+online version: https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductAvailability
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerProductAvailability.md
 schema: 2.0.0
 ---
@@ -15,13 +15,13 @@ Gets the availability for a specified product.
 ## SYNTAX
 
 ### BySku (Default)
-```powershell
+```
 Get-PartnerProductAvailability -ProductId <String> -SkuId <String> [-CountryCode <String>] [-Segment <String>]
  [<CommonParameters>]
 ```
 
 ### ByAvailabilityId
-```powershell
+```
 Get-PartnerProductAvailability -ProductId <String> -SkuId <String> [-CountryCode <String>]
  -AvailabilityId <String> [<CommonParameters>]
 ```
