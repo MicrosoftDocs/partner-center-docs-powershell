@@ -1,11 +1,7 @@
 ---
 title:  Partner Center PowerShell | Microsoft Docs
 description: How to install the Partner Center PowerShell module.
-author: isaiahwilliams
-ms.author: iswillia
 ms.date: 03/21/2019
-ms.service: partnercenter
-ms.topic: conceptual
 ---
 
 # Partner Center PowerShell

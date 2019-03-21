@@ -35,27 +35,17 @@
         "dest": "partnercenterps-1.5"
       }
     },
-    "filemetadata": {
-      "ms.author": {
-        "partnercenterps-1.5/**/*.md": "iswillia",
-        "docs-conceptual/**/*.md": "iswillia"
-      },
-      "author": {
-        "partnercenterps-1.5/**/*.md": "isaiahwilliams",
-        "docs-conceptual/**/*.md": "isaiahwilliams"        
-      },
-      "ms.service": {
-        "partnercenterps-1.5/**/*.md": "partnercenter",
-        "docs-conceptual/**/*.md": "partnercenter"        
-      }
-    },
     "globalMetadata": {
+      "author": "isaiahwilliams",
       "showPowerShellPicker": "true",
       "apiPlatform": "powershell",
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/partner-center-docs-powershell",
       "feedback_product_url": "https://github.com/Microsoft/Partner-Center-PowerShell/issues/new",
       "breadcrumb_path": "/powershell/partnercenter/breadcrumb/toc.json",
+      "ms.author": "iswillia",
+      "ms.topic": "article",
+      "ms.prod": "partner-center",
       "ms.devlang": "powershell"
     },
     "dest": "partnercenterps"
