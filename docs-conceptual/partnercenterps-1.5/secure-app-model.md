@@ -1,20 +1,11 @@
 ---
 title:  Partner Center PowerShell | Microsoft Docs
 description: Secure Application Model
-services: partner-center
-documentationcenter: ''
 author: isaiahwilliams
-manager: jegraves
-editor: ''
-
-ms.service: partner-center
-ms.workload: partner-center
-ms.tgt_pltfrm: na
-ms.devlang: powershell
-ms.custom: posh-docs-conceptual
-ms.topic: hero-article
-ms.date: 1/29/2019
 ms.author: iswillia
+ms.date: 03/21/2019
+ms.service: partnercenter
+ms.topic: conceptual
 ---
 
 # Secure Application Model

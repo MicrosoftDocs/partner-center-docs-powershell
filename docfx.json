@@ -41,12 +41,8 @@
         "docs-conceptual/**/*.md": "iswillia"
       },
       "author": {
-        "partnercenterps-1.5/**/*.md": "iswillia",
-        "docs-conceptual/**/*.md": "iswillia"        
-      },
-      "ms.manager": {
-        "partnercenterps-1.5/**/*.md": "lesliep",
-        "docs-conceptual/**/*.md": "lesliep"        
+        "partnercenterps-1.5/**/*.md": "isaiahwilliams",
+        "docs-conceptual/**/*.md": "isaiahwilliams"        
       },
       "ms.service": {
         "partnercenterps-1.5/**/*.md": "partnercenter",
