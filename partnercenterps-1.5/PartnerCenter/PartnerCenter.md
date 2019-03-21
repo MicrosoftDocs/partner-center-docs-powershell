@@ -74,6 +74,15 @@ Gets the managed services for a customer.
 ### [Get-PartnerCustomerOrder](Get-PartnerCustomerOrder.md)
 Gets either a specific order or a list of order for the specified customer.
 
+### [Get-PartnerCustomerOrderLineItemActivationLink](Get-PartnerCustomerOrderLineItemActivationLink.md)
+Gets the activation link for the specified order line item.
+
+### [Get-PartnerCustomerOrderProvisioningStatus](Get-PartnerCustomerOrderProvisioningStatus.md)
+Gets the provisioning status for a customer order.
+
+### [Get-PartnerCustomerQualification](Get-PartnerCustomerQualification.md)
+Get the qualification assigned to the customer.
+
 ### [Get-PartnerCustomerServiceCosts](Get-PartnerCustomerServiceCosts.md)
 Gets a customer's service cost line items for the specified billing period.
 
@@ -137,6 +146,9 @@ Gets an invoice statement using the invoice identifier.
 ### [Get-PartnerInvoiceSummary](Get-PartnerInvoiceSummary.md)
 Gets a summary view of the invoice.
 
+### [Get-PartnerInvoiceTaxReceiptStatement](Get-PartnerInvoiceTaxReceiptStatement.md)
+Gets the tax receipt statement for the specified invoice.
+
 ### [Get-PartnerLegalProfile](Get-PartnerLegalProfile.md)
 Gets the partner legal business profile from Partner Center.
 
@@ -187,6 +199,9 @@ Gets a list of service request topics.
 
 ### [Get-PartnerSupportProfile](Get-PartnerSupportProfile.md)
 Gets the partner's support profile.
+
+### [Get-PartnerValidationCode](Get-PartnerValidationCode.md)
+Gets a collection of a partner's Government Community Cloud validation codes.
 
 ### [New-PartnerAccessToken](New-PartnerAccessToken.md)
 Acquires an access token from the authority.
@@ -250,6 +265,9 @@ Updates an order for a customer in a cart.
 
 ### [Set-PartnerCustomerConfigurationPolicy](Set-PartnerCustomerConfigurationPolicy.md)
 Updates an existing configuration policy with the specified options.
+
+### [Set-PartnerCustomerQualification](Set-PartnerCustomerQualification.md)
+Updates the specified customer's qualification to be Education or GovernmentCommunityCloud.
 
 ### [Set-PartnerCustomerSubscription](Set-PartnerCustomerSubscription.md)
 Updates the specified customer subscription.

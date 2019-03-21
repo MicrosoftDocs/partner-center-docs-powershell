@@ -20,7 +20,7 @@ New-PartnerCustomer [-AssociatedPartnerId <String>] -BillingAddressLine1 <String
  [-BillingAddressPostalCode <String>] [-BillingAddressRegion <String>] [-BillingAddressState <String>]
  [-ContactEmail <String>] [-ContactFirstName <String>] [-ContactLastName <String>]
  [-ContactPhoneNumber <String>] [-Culture <String>] -Domain <String> -Language <String> -Name <String>
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DisableValidation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContactEmail
-The email address of the primary contact at the customer.
+The email address of the primary contact of the customer.
 
 ```yaml
 Type: String
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContactFirstName
-The first name of the primary contact at the customer.
+The first name of the primary contact of the customer.
 
 ```yaml
 Type: String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContactLastName
-The last name of the primary contact at the customer.
+The last name of the primary contact of the customer.
 
 ```yaml
 Type: String
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContactPhoneNumber
-The phone number of the primary contact at the customer.
+The phone number of the primary contact of the customer.
 
 ```yaml
 Type: String
@@ -222,6 +222,21 @@ The preferred culture for communication and currency.
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableValidation
+A flag that indicates whether the additional client side validation should be disabled.
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

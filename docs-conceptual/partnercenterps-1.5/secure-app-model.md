@@ -3,7 +3,7 @@ title:  Partner Center PowerShell | Microsoft Docs
 description: Secure Application Model
 services: partner-center
 documentationcenter: ''
-author: iswillia
+author: isaiahwilliams
 manager: jegraves
 editor: ''
 
@@ -184,7 +184,7 @@ The Az and Azure PowerShell modules both support the ability to authenticate usi
 $credential = Get-Credential
 $refreshToken = 'Your-Refresh-Token-Value'
 
-$azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://azure.management.com/ -Credential $credential
+$azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://management.azure.com/ -Credential $credential
 $graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential
 
 # Az Module
@@ -202,7 +202,7 @@ The MSOnline PowerShell module support authentication using access tokens. The f
 $credential = Get-Credential
 $refreshToken = 'Your-Refresh-Token-Value'
 
-$aadGraphToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.windows.net -Credential $credential 
+$aadGraphToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.windows.net -Credential $credential
 $graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential
 
 Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAccessToken $graphToken.AccessToken
