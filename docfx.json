@@ -5,6 +5,14 @@
         "files": [
           "toc.yml"
         ],
+        "src": "breadcrumb",
+        "version": "partnercenterps-1.5",
+        "dest": "partnercenter/breadcrumb"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
         "src": "partnercenterps-1.5",
         "version": "partnercenterps-1.5",
         "dest": "module/partnercenter"
@@ -36,17 +44,15 @@
       }
     },
     "globalMetadata": {
-      "author": "isaiahwilliams",
       "showPowerShellPicker": "true",
       "apiPlatform": "powershell",
-      "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/partner-center-docs-powershell",
-      "feedback_product_url": "https://github.com/Microsoft/Partner-Center-PowerShell/issues/new",
       "breadcrumb_path": "/powershell/partnercenter/breadcrumb/toc.json",
+      "extendBreadcrumb": true,
+      "author": "isaiahwilliams",
       "ms.author": "iswillia",
-      "ms.topic": "article",
       "ms.prod": "partner-center",
-      "ms.devlang": "powershell"
+      "ms.devlang": "powershell", 
+      "uhfHeaderId": "MSDocsHeader-Partner-Center"
     },
     "dest": "partnercenterps"
   }
