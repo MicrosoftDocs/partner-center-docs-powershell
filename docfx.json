@@ -38,22 +38,47 @@
         "dest": "partnercenter"
       }
     ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
+    ],
     "versions": {
       "partnercenterps-1.5": {
         "dest": "partnercenterps-1.5"
       }
     },
+    "filemetadata": {
+      "enable_powershell_try_it": {
+        "partnercenterps-*/**/*.md": true
+      },
+      "ms.topic": {
+        "docs-conceptual/**/*.md": "article",
+        "partnercenterps-*/**/*.md": "reference"
+      }
+    },
     "globalMetadata": {
-      "showPowerShellPicker": "true",
+      "author": "isaiahwilliams",
       "apiPlatform": "powershell",
       "breadcrumb_path": "/powershell/partnercenter/breadcrumb/toc.json",
       "extendBreadcrumb": true,
-      "author": "isaiahwilliams",
+      "feedback_github_repo": "microsoftdocs/partner-center-docs-powershell",
+      "feedback_system": "GitHub",
+      "feedback_product_url": "https://github.com/microsoft/partner-center-powerShell/issues/new",
       "ms.author": "iswillia",
+      "ms.devlang": "powershell",
       "ms.prod": "partner-center",
-      "ms.devlang": "powershell", 
+      "showPowerShellPicker": "true",
       "uhfHeaderId": "MSDocsHeader-Partner-Center"
     },
-    "dest": "partnercenterps"
+    "dest": "partnercenterps",
+    "markdownEngineName": "markdig"
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: Overview of Partner Center PowerShell | Microsoft Docs
 description: An overview of Partner Center with links to installation and configuration.
-ms.date: 03/21/2019
+ms.date: 05/17/2019
 ---
 
 # Partner Center PowerShell
