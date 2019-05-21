@@ -4,7 +4,6 @@
   - name: Install the Partner Center PowerShell module
     href: install.md
 - name: Authentication
-  href: authentication.md
   items:
     - name: Multi-factor Authentication (MFA)
       href: multi-factor-auth.md
