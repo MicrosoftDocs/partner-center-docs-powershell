@@ -35,9 +35,9 @@ Connect-AzAccount -AccessToken $token.AccessToken -GraphAccessToken $graphToken.
 Connect-AzureRmAccount -AccessToken $token.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
 ```
 
-### Microsoft 365
+## Microsoft 365
 
-#### Azure Active Directory
+### Azure Active Directory
 
 ```powershell
 $credential = Get-Credential
@@ -49,7 +49,7 @@ $graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource http
 Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId '<UPN-OF-USER-USED-TO-GEN-REFRESH-TOKEN>' -MsAccessToken $graphToken.AccessToken
 ```
 
-#### MS Online
+### MS Online
 
 ```powershell
 $credential = Get-Credential
@@ -61,7 +61,7 @@ $graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource http
 Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAccessToken $graphToken.AccessToken
 ```
 
-### Partner Center
+## Partner Center
 
 ```powershell
 $refreshToken = 'Enter the refresh token value here'
