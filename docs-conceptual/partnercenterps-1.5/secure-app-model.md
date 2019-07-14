@@ -12,6 +12,8 @@ Microsoft is introducing a secure framework for authenticating Cloud Solution Pr
 
 Partners will need to perform a consent process. Through this process, an access token will be requested from Azure Active Directory using an authorization code. The result returned from that request will include an access token, refresh token and additional information. The refresh token value should be stored in a secure repository such as Azure Key Vault. It will be used when requesting an access token to interact with the Partner Center API. You can use the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/new-partneraccesstoken) command to perform the consent process.
 
+**Note:** When using `New-PartnerAccessToken` for Azure clouds such as US Government, environment parameter to be populated with values as defined in the module [documentation](https://docs.microsoft.com/en-us/powershell/module/partnercenter/new-partneraccesstoken?view=partnercenterps-1.5).  Failing to set explicit environment parameter will default the environment Global Azure and could result in the powershell to return error "AADSTS90038: Confidential Client is not supported in Cross Cloud request." 
+
 ### Azure AD Application
 
 An Azure AD application will be required to perform the consent operation. The Azure AD application must have `urn:ietf:wg:oauth:2.0:oob` configured as on the reply URLs. You can use the following PowerShell commands to configure the reply address for an existing application.
