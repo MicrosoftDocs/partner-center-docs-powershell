@@ -16,15 +16,15 @@ Updates the specified customer user account.
 
 ### UserId (Default)
 ```powershell
-Set-PartnerCustomerUser [-DisplayName <String>] [-ForceChangePasswordNextLogin] [-CustomerId] <String>
- [-FirstName <String>] [-LastName <String>] [-Password <SecureString>] [-UsageLocation <String>]
+Set-PartnerCustomerUser [-DisplayName <String>] [-FirstName <String>] [-ForceChangePasswordNextLogin]
+ [-CustomerId] <String> [-LastName <String>] [-Password <SecureString>] [-UsageLocation <String>]
  -UserId <String> [-UserPrincipalName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UserObject
 ```powershell
-Set-PartnerCustomerUser [-DisplayName <String>] [-ForceChangePasswordNextLogin] [-CustomerId] <String>
- -InputObject <PSCustomerUser> [-FirstName <String>] [-LastName <String>] [-Password <SecureString>]
+Set-PartnerCustomerUser [-DisplayName <String>] [-FirstName <String>] [-ForceChangePasswordNextLogin]
+ [-CustomerId] <String> -InputObject <PSCustomerUser> [-LastName <String>] [-Password <SecureString>]
  [-UsageLocation <String>] [-UserPrincipalName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -239,11 +239,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Store.PartnerCenter.PowerShell.Models.CustomerUsers.PSCustomerUser
+### Microsoft.Store.PartnerCenter.PowerShell.Models.Users.PSCustomerUser
 
 ## OUTPUTS
 
-### Microsoft.Store.PartnerCenter.PowerShell.Models.CustomerUsers.PSCustomerUser
+### Microsoft.Store.PartnerCenter.PowerShell.Models.Users.PSCustomerUser
 
 ## NOTES
 

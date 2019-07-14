@@ -142,7 +142,7 @@ Next you will need to invoke the [New-PartnerAccessToken](https://docs.microsoft
 
 ```powershell
 $credential = Get-Credential
-$token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com
+$token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com -TenantId '<Your Tenant Id>'
 ```
 
 When the command is invoked, you will be prompted to enter a username and password. Specify the application identifier as the username and the application secret as the password. When then New-PartnerAccessToken command is invoked, you will be prompted for credentials once again. This time you will need to specify the credentials for the service account that you will be using. The service account should be a partner account with the appropriate permissions. After the successful execution of the command, you will find that the `$token` variable contains the response from Azure Active Directory for a token. In the response is a refresh token, you will want to store this value in a secure repository such as Azure Key Vault or a similar service.
@@ -175,10 +175,10 @@ $azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https
 $graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential
 
 # Az Module
-Connect-AzAccount -AccessToken $token.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
+Connect-AzAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
 
 # AzureRM Module
-Connect-AzureRmAccount -AccessToken $token.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
+Connect-AzureRmAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
 ```
 
 ### MSOnline

@@ -49,6 +49,10 @@ $graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource http
 Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId '<UPN-OF-USER-USED-TO-GEN-REFRESH-TOKEN>' -MsAccessToken $graphToken.AccessToken
 ```
 
+### Exchange Online PowerShell
+
+When MFA is enabled partners will not be able to utilize their delegated administrative privileges with Exchange Online PowerShell to perform actions against their customers. See [Connect to Exchange Online PowerShell using multi-factor authentication](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell) for more information regarding this limitation.
+
 ### MS Online
 
 ```powershell
@@ -67,8 +71,7 @@ Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAcces
 $refreshToken = 'Enter the refresh token value here'
 
 $credential = Get-Credential
-$pcToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://api.partnercenter.microsoft.com -Credential $credential
-$tenantId = '<Your Tenant Id>'
+$pcToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://api.partnercenter.microsoft.com -Credential $credential -TenantId '<Your Tenant Id>'
 
-Connect-PartnerCenter -AccessToken $pcToken.AccessToken -ApplicationId $appId -TenantId $tenantId
+Connect-PartnerCenter -AccessToken $pcToken.AccessToken -ApplicationId $appId -TenantId '<Your Tenant Id>'
 ```
