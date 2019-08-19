@@ -1,7 +1,7 @@
 - name: Overview
   href: overview.md
   items: 
-  - name: Install the Partner Center PowerShell module
+  - name: Install
     href: install.md
 - name: Authentication
   items:
