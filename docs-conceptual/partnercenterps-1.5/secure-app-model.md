@@ -173,8 +173,8 @@ The Az and Azure PowerShell modules both support the ability to authenticate usi
 $credential = Get-Credential
 $refreshToken = 'Your-Refresh-Token-Value'
 
-$azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://management.azure.com/ -Credential $credential
-$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential
+$azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://management.azure.com/ -Credential $credential -TenantId '<Your Tenant Id>'
+$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential -TenantId '<Your Tenant Id>'
 
 # Az Module
 Connect-AzAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
@@ -191,8 +191,8 @@ The MSOnline PowerShell module support authentication using access tokens. The f
 $credential = Get-Credential
 $refreshToken = 'Your-Refresh-Token-Value'
 
-$aadGraphToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.windows.net -Credential $credential
-$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential
+$aadGraphToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.windows.net -Credential $credential -TenantId '<Your Tenant Id>'
+$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential -TenantId '<Your Tenant Id>'
 
 Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAccessToken $graphToken.AccessToken
 ```
