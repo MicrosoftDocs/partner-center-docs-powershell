@@ -188,6 +188,12 @@ Gets the list of SKUs for a product.
 ### [Get-PartnerResellerRequestLink](Get-PartnerResellerRequestLink.md)
 Gets a relationship request URL to send to a customer.
 
+### [Get-PartnerRole](Get-PartnerRole.md)
+Gets a list of partner roles.
+
+### [Get-PartnerRoleMember](Get-PartnerRoleMember.md)
+Gets the members of the specified partner role.
+
 ### [Get-PartnerServiceIncident](Get-PartnerServiceIncident.md)
 Gets a list of service incidents.
 
@@ -301,4 +307,3 @@ Tests whether or not the specified address is valid.
 
 ### [Test-PartnerDomainAvailability](Test-PartnerDomainAvailability.md)
 Tests if the specified domain name is available for creating a new tenant.
-

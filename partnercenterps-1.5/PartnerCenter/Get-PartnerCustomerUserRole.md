@@ -78,7 +78,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Store.PartnerCenter.PowerShell.Models.DirectoryRoles.PSDirectoryRole
+### Microsoft.Store.PartnerCenter.PowerShell.Models.Roles.PSDirectoryRole
 
 ## NOTES
 
