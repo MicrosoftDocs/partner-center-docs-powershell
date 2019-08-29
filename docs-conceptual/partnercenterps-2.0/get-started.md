@@ -43,7 +43,7 @@ Once signed in, use the Partner Center PowerShell cmdlets to access and manage r
 
 Partner Center PowerShell cmdlets follow a standard naming convention for PowerShell, `VERB-NOUN`. The verb describes the action (examples include `New`, `Get`, `Set`, `Remove`) and the noun describes the resource type (examples include `PartnerAgreementTemplate`, `PartnerAzureRateCard`, `PartnerCustomer`). Nouns in Partner Center PowerShell always start with the prefix `Partner`. For the full list of standard verbs, see [Approved verbs for PowerShell Commands](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
-Knowing the nouns, verbs, and the Azure PowerShell modules available help you find commands with the [Get-Command](/powershell/module/microsoft.powershell.core/get-command) cmdlet. For example, to find all VM-related commands that use the `Get` verb:
+You can use the [Get-Command](/powershell/module/microsoft.powershell.core/get-command) cmdlet to help find the nouns and verbs available. As an example, to find all Customer commands that use the `Get` verb you would use the following
 
 ```powershell-interactive
 Get-Command -Verb Get -Noun PartnerCustomer*
