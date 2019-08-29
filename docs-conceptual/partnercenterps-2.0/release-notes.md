@@ -1,13 +1,13 @@
 ---
 title: Release notes for Partner Center PowerShell
-description: Discover what has changed Partner Center PowerShell with each release.
+description: Discover what has changed with Partner Center PowerShell with each release.
 ms.topic: conceptual
 ms.date: 09/09/2019
 ---
 
 # Release notes
 
-## 2.0 - September 2019
+## 2.0.1909.1 - September 2019
 
 * Authentication
   * Added the ability to invoke [Connect-PartnerCenter](/powershell/module/partnercenter/connect-partnercenter) without requiring the creation of an Azure Active Directory application

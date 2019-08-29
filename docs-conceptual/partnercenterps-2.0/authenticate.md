@@ -20,9 +20,7 @@ Connect-PartnerCenter
 When you run this cmdlet it will open a browser where you will be able to authenticate. If the system you are using to connect does not a browser, then you will be provided a code. To authenticate, copy this code and paste it into <https://microsoft.com/devicelogin> in a browser.
 
 > [!IMPORTANT]
->
-> Username/password credential authorization has been removed in Partner Center PowerShell due to the partner security requirements.
-> If you use credential authorization for automation purposes, instead implement the [Secure Application Model](multi-factor-auth.md) so you can authenticate using an access token generated using a refresh token.
+> Username/password credential authorization has been removed in Partner Center PowerShell due to the partner security requirements. If you use credential authorization for automation purposes, instead implement the [Secure Application Model](multi-factor-auth.md) so you can authenticate using an access token generated using a refresh token.
 
 ## Sign in with a service principal
 
