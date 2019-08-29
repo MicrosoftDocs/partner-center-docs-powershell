@@ -16,7 +16,7 @@
       tenant, subscription, region, certificate, service principal,
       authenticate
   - name: Multi-Factor Authentication
-    href: multi-factor-authentication.md
+    href: multi-factor-auth.md
     displayName: mfa, secure application model, multi-factor auth, multi-factor authentication
 - name: Releases
   items:
