@@ -36,6 +36,42 @@
         "src": "docs-conceptual/partnercenterps-1.5",
         "version": "partnercenterps-1.5",
         "dest": "partnercenter"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "breadcrumb",
+        "version": "partnercenterps-2.0",
+        "dest": "partnercenter/breadcrumb"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "partnercenterps-2.0",
+        "version": "partnercenterps-2.0",
+        "dest": "module/partnercenter"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "partnercenterps-2.0",
+        "version": "partnercenterps-2.0",
+        "exclude": [
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
+        "files": [
+          "**/*.yml",
+          "**/*.md"
+        ],
+        "src": "docs-conceptual/partnercenterps-2.0",
+        "version": "partnercenterps-2.0",
+        "dest": "partnercenter"
       }
     ],
     "resource": [

@@ -6,13 +6,13 @@ ms.date: 03/21/2019
 
 # Secure Application Model
 
-Microsoft is introducing a secure framework for authenticating Cloud Solution Provider (CSP) partners and Control Panel Vendors (CPV) using multi-factor authentication (MFA). This new model will elevate security for operations involving the Partner Center API. This will help to protect the partner’s infrastructure and customer data from security risk. To learn more about the secure application model read through the [Enable secure application model](https://docs.microsoft.com/partner-center/develop/enable-secure-app-model) documentation. This article will demonstrate how to utilize the Partner Center PowerShell module with the secure application model.
+Microsoft is introducing a secure framework for authenticating Cloud Solution Provider (CSP) partners and Control Panel Vendors (CPV) using multi-factor authentication (MFA). This new model will elevate security for operations involving the Partner Center API. This will help to protect the partner’s infrastructure and customer data from security risk. To learn more about the secure application model read through the [Enable secure application model](/partner-center/develop/enable-secure-app-model) documentation. This article will demonstrate how to utilize the Partner Center PowerShell module with the secure application model.
 
 ## Partner Consent
 
-Partners will need to perform a consent process. Through this process, an access token will be requested from Azure Active Directory using an authorization code. The result returned from that request will include an access token, refresh token and additional information. The refresh token value should be stored in a secure repository such as Azure Key Vault. It will be used when requesting an access token to interact with the Partner Center API. You can use the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/new-partneraccesstoken) command to perform the consent process.
+Partners will need to perform a consent process. Through this process, an access token will be requested from Azure Active Directory using an authorization code. The result returned from that request will include an access token, refresh token and additional information. The refresh token value should be stored in a secure repository such as Azure Key Vault. It will be used when requesting an access token to interact with the Partner Center API. You can use the [New-PartnerAccessToken](/powershell/module/partnercenter/new-partneraccesstoken) command to perform the consent process.
 
-**Note:** When using `New-PartnerAccessToken` for Azure clouds such as US Government, environment parameter to be populated with values as defined in the module [documentation](https://docs.microsoft.com/en-us/powershell/module/partnercenter/new-partneraccesstoken?view=partnercenterps-1.5).  Failing to set explicit environment parameter will default the environment Global Azure and could result in the powershell to return error "AADSTS90038: Confidential Client is not supported in Cross Cloud request." 
+**Note:** When using `New-PartnerAccessToken` for Azure clouds such as US Government, environment parameter to be populated with values as defined in the module [documentation](/powershell/module/partnercenter/new-partneraccesstoken).  Failing to set explicit environment parameter will default the environment Global Azure and could result in the powershell to return error "AADSTS90038: Confidential Client is not supported in Cross Cloud request."
 
 ### Azure AD Application
 
@@ -140,7 +140,7 @@ Write-Host "ApplicationSecret   = $($password.Value)"
 
 ### Performing the Consent
 
-Next you will need to invoke the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/new-partneraccesstoken) command as shown below to perform the consent process.
+Next you will need to invoke the [New-PartnerAccessToken](/powershell/module/partnercenter/new-partneraccesstoken) command as shown below to perform the consent process.
 
 ```powershell
 $credential = Get-Credential
@@ -151,14 +151,14 @@ When the command is invoked, you will be prompted to enter a username and passwo
 
 ## Using the Refresh Token
 
-Using the [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/connect-partnercenter) command you can connect to Partner Center. You will need to obtain the refresh token value from the secure repository where you stored it. Execute the following commands to request an access token and use it when connecting to Partner Center.
+Using the [Connect-PartnerCenter](/powershell/module/partnercenter/connect-partnercenter) command you can connect to Partner Center. You will need to obtain the refresh token value from the secure repository where you stored it. Execute the following commands to request an access token and use it when connecting to Partner Center.
 
 ```powershell
 $refreshToken = 'Enter the refresh token value here'
 
 $credential = Get-Credential
-$pcToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://api.partnercenter.microsoft.com -Credential $credential
 $tenantId = '<Your Tenant Id>'
+$pcToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://api.partnercenter.microsoft.com -Credential $credential -TenantId $tenantId
 
 Connect-PartnerCenter -AccessToken $pcToken.AccessToken -ApplicationId $appId -TenantId $tenantId
 ```
@@ -167,7 +167,7 @@ When you are prompted for credentials specify the application identifier and app
 
 ### Azure
 
-The Az and Azure PowerShell modules both support the ability to authenticate using access tokens. The following commands demonstrate hot utilize a refresh token to obtain the required access token to connect using the [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) or [Connect-AzureRmAccount](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount) commands.
+The Az and Azure PowerShell modules both support the ability to authenticate using access tokens. The following commands demonstrate hot utilize a refresh token to obtain the required access token to connect using the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) or [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) commands.
 
 ```powershell
 $credential = Get-Credential
@@ -185,7 +185,7 @@ Connect-AzureRmAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $g
 
 ### MSOnline
 
-The MSOnline PowerShell module support authentication using access tokens. The following commands demonstrate how to utilize the refresh token to obtain the required access token to connect using the [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice) command.
+The MSOnline PowerShell module support authentication using access tokens. The following commands demonstrate how to utilize the refresh token to obtain the required access token to connect using the [Connect-MsolService](/powershell/module/msonline/connect-msolservice) command.
 
 ```powershell
 $credential = Get-Credential

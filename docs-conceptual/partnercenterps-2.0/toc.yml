@@ -1,0 +1,26 @@
+- name: Partner Center PowerShell
+  href: overview.md
+- name: Install
+  href: install.md
+- name: Get started
+  href: get-started.md
+  displayName: sign in, signin, log in, login, find, feedback, intro, introduction
+- name: Cloud Shell
+  href: https://docs.microsoft.com/azure/cloud-shell/overview
+- name: Sign in
+  items: 
+  - name: Authentication methods
+    href: authenticate.md
+    displayName: >-
+      sign in, signin, log in, login, credentials, msi, managed identity,
+      tenant, subscription, region, certificate, service principal,
+      authenticate
+  - name: Multi-Factor Authentication
+    href: multi-factor-authentication.md
+    displayName: mfa, secure application model, multi-factor auth, multi-factor authentication
+- name: Releases
+  items:
+  - name: Release notes
+    href: release-notes.md
+  - name: Breaking changes
+    href: breaking-changes.md 

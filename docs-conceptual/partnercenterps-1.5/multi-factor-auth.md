@@ -4,7 +4,7 @@ description: Leveraging the Partner Center PowerShell module to obtain access to
 ms.date: 05/17/2019
 ---
 
-# Multi-Factor Authentication 
+# Multi-Factor Authentication
 
 Multi-Factor Authentication (MFA) helps safeguard access to data and applications while maintaining simplicity for users. It provides additional security by requiring a second form of authentication and delivers strong authentication through a range of easy to use authentication methods. Users may or may not be challenged for Multi-Factor Authentication based on configuration decisions that an administrator makes. The requirement for Multi-Factor Authentication can complicate any automation that you have developed because a second form of authentication must be provided when authenticating.
 
