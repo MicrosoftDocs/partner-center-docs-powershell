@@ -5,8 +5,6 @@
 - name: Get started
   href: get-started.md
   displayName: sign in, signin, log in, login, find, feedback, intro, introduction
-- name: Cloud Shell
-  href: https://docs.microsoft.com/azure/cloud-shell/overview
 - name: Sign in
   items: 
   - name: Authentication methods

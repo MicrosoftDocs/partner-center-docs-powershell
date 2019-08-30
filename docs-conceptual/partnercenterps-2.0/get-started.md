@@ -7,21 +7,15 @@ ms.date: 09/09/2019
 
 # Get started with Partner Center PowerShell
 
-Partner Center PowerShell is designed for administering and managing resources for the Cloud Solution Provider program from the command line. Try it out in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview), or install on your local machine.
+Partner Center PowerShell is designed for administering and managing resources for the Cloud Solution Provider program from the command line. This article helps you get started with Partner Center PowerShell and teaches the core concepts behind it.
 
-This article helps you get started with Partner Center PowerShell and teaches the core concepts behind it.
+## Install
 
-## Install or run in Azure Cloud Shell
-
-The easiest way to get started with Azure PowerShell is by trying it out in an Azure Cloud Shell environment.
-To get up and running with Cloud Shell, see [Quickstart for PowerShell in Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
-Cloud Shell runs PowerShell 6 on a Linux container, so Windows-specific functionality isn't available.
-
-When you're ready to install Partner Center PowerShell on your local machine, follow the instructions in [Install the Partner Center PowerShell module](install.md).
+When you are ready to install Partner Center PowerShell on your local machine, follow the instructions in [Install the Partner Center PowerShell module](install.md).
 
 ## Sign in to Partner Center
 
-Sign in interactively with the `Connect-PartnerCenter` cmdlet. 
+Sign in interactively with the `Connect-PartnerCenter` cmdlet.
 
 ```azurepowershell-interactive
 Connect-PartnerCenter
@@ -51,4 +45,4 @@ Get-Command -Verb Get -Noun PartnerCustomer*
 ## Next steps
 
 * [Sign in with Partner Center PowerShell](authenticate.md)
-* [Get help from the community](https://stackoverflow.com/questions/tagged/partnercenter)
+* [Get help from the community](https://stackoverflow.com/questions/tagged/partner+center)

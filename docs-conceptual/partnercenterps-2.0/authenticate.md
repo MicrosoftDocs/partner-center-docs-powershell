@@ -7,7 +7,7 @@ ms.date: 09/09/2019
 
 # Sign in with Partner Center PowerShell
 
-Azure PowerShell supports several authentication methods. The easiest way to get started is with [Azure Cloud Shell](/azure/cloud-shell/overview), which automatically logs you in. With a local install, you can sign in interactively through your browser. When writing scripts for automation, the recommended approach is to use an [access token](multi-factor-auth.md) with the necessary permissions. When you restrict sign-in permissions as much as possible for your use case, you help keep your Azure resources secure.
+Partner Center PowerShell supports several authentication methods. When writing scripts for automation, the recommended approach is to use an [access token](multi-factor-auth.md) with the necessary permissions. When you restrict sign-in permissions as much as possible for your use case, you help keep your Azure resources secure.
 
 ## Sign in interactively
 
@@ -30,7 +30,7 @@ To sign in with a service principal, use the `-ServicePrincipal` argument with t
 
 ### Certificate-based authentication
 
-Certificate-based authentication requires that Azure PowerShell can retrieve information from a local certificate store based on a certificate thumbprint.
+Certificate-based authentication requires that Partner Center PowerShell can retrieve information from a local certificate store based on a certificate thumbprint.
 
 ```azurepowershell-interactive
 Connect-PartnerCenter -CertificateThumbprint '<thumbprint>' -ServicePrincipal -TenantId 'xxxx-xxxx-xxxx-xxxx'
