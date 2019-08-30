@@ -7,9 +7,9 @@ ms.date: 09/09/2019
 
 # Get started with Partner Center PowerShell
 
-Azure PowerShell is designed for managing and administering Azure resources from the command line. Use Azure PowerShell when you want to build automated tools that use the Azure Resource Manager model. Try it out in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview), or install on your local machine.
+Partner Center PowerShell is designed for administering and managing resources for the Cloud Solution Provider program from the command line. Try it out in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview), or install on your local machine.
 
-This article helps you get started with Azure PowerShell and teaches the core concepts behind it.
+This article helps you get started with Partner Center PowerShell and teaches the core concepts behind it.
 
 ## Install or run in Azure Cloud Shell
 
@@ -17,18 +17,17 @@ The easiest way to get started with Azure PowerShell is by trying it out in an A
 To get up and running with Cloud Shell, see [Quickstart for PowerShell in Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
 Cloud Shell runs PowerShell 6 on a Linux container, so Windows-specific functionality isn't available.
 
-When you're ready to install Azure PowerShell on your local machine, follow the instructions in [Install the Azure PowerShell module](install.md).
+When you're ready to install Partner Center PowerShell on your local machine, follow the instructions in [Install the Partner Center PowerShell module](install.md).
 
 ## Sign in to Partner Center
 
-Sign in interactively with the `Connect-PartnerCenter` cmdlet. Skip this step if you use Cloud Shell: Your Azure Cloud Shell session is already authenticated
-for the environment, subscription, and tenant that launched the Cloud Shell session.
+Sign in interactively with the `Connect-PartnerCenter` cmdlet. 
 
 ```azurepowershell-interactive
 Connect-PartnerCenter
 ```
 
-If you're in a non-US region, use the `-Environment` parameter to sign in. Get the name of the environment for your region by using
+If you are in a non-US region, use the `-Environment` parameter to sign in. Get the name of the environment for your region by using
 the [Get-PartnerEnvironment](/powershell/module/partnercenter/Get-PartnerEnvironment) cmdlet. For example, to sign in to Azure China 21Vianet:
 
 ```azurepowershell-interactive

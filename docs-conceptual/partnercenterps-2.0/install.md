@@ -11,7 +11,7 @@ The Partner Center PowerShell module contains a set of PowerShell commands for p
 
 ## Requirements
 
-Partner Center PowerShell works with PowerShell 5.1 or higher on Windows, or PowerShell Core 6.x and later on all platforms. If you are not sure if you have PowerShell, or are on macOS or Linux, [install the latest version of PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core).
+Partner Center PowerShell works with PowerShell 5.1 or higher on Windows, or PowerShell Core 6.x and later on all platforms. If you are not sure if you have PowerShell, or using macOS or Linux, [install the latest version of PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core).
 
 To check your PowerShell version, run the following command:
 
@@ -83,7 +83,6 @@ In order to install the package, your proxy needs to allow HTTPS connections to 
 To start working with Partner Center PowerShell, sign in with your partner credentials.
 
 ```powershell-interactive
-# Connect to Partner Center with a browser sign in token
 Connect-PartnerCenter
 ```
 
