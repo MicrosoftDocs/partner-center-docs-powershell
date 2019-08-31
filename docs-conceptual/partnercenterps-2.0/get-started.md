@@ -7,7 +7,7 @@ ms.date: 09/09/2019
 
 # Get started with Partner Center PowerShell
 
-Partner Center PowerShell is designed for administering and managing resources for the Cloud Solution Provider program from the command line. This article helps you get started with Partner Center PowerShell and teaches the core concepts behind it.
+Partner Center PowerShell is designed for administering and managing Partner Center resources from the command line. This article helps you get started with Partner Center PowerShell and teaches the core concepts behind it.
 
 ## Install
 

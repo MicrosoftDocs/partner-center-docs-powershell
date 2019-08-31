@@ -19,11 +19,11 @@ The requirement for Multi-Factor Authentication can complicate any automation th
 | Exchange | Using the securely stored refresh token, generated through the consent step, you will request a new access token from Azure Active Directory. See [refresh the access token](/azure/active-directory/develop/v2-oauth2-auth-code-flow#refresh-the-access-token) for more information regarding the refresh token value. |
 
 > [!IMPORTANT]
-> By default the lifetime of a refresh token is 90 days. So, it is important that you have a process for updating the refresh token prior to it's expiration. If it does expire, you will receive an error similar to the following when attempting to exchange it for an access token *The refresh token has expired due to inactivity. The token was issued on 2019-01-02T09:19:53.5422744Z and was inactive for 90.00:00:00*.
+> By default, the lifetime of a refresh token is 90 days. So, it is important that you have a process for updating the refresh token prior to the expiration. If it does expire, you will receive an error similar to the following when attempting to exchange it for an access token *The refresh token has expired due to inactivity. The token was issued on 2019-01-02T09:19:53.5422744Z and was inactive for 90.00:00:00*.
 
 ### Consent
 
-The consent step can be performed through a number of different methods. When using PowerShell it is recommended to use the [New-PartnerAccessToken](/powershell/module/partnercenter/new-partneraccesstoken) cmdlet. The following is an example of how you can request a new access token for use with the Partner Center API, SDK, or PowerShell module.
+The consent step can be performed through several different methods. When using PowerShell it is recommended to use the [New-PartnerAccessToken](/powershell/module/partnercenter/new-partneraccesstoken) cmdlet. The following is an example of how you can request a new access token for use with the Partner Center API, SDK, or PowerShell module.
 
 ```powershell-interactive
 $credential = Get-Credential
@@ -43,7 +43,7 @@ $refreshToken = '<refreshToken>'
 New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
-The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. The third command will generate a new access token using the service principal credentials stored in the `$credential` variable and the refresh token stored in the $refreshToken variable for authentication.
+The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. The third command will generate a new access token using the service principal credentials stored in the `$credential` variable and the refresh token stored in the `$refreshToken` variable for authentication.
 
 ## Samples
 
@@ -80,6 +80,11 @@ Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId 'azureuser
 
 #### Exchange Online PowerShell
 
+> [!WARNING]
+> When MFA is enforced partners will not be able to utilize their delegated administrative privileges with Exchange Online PowerShell to perform actions against their customers. See [Connect to Exchange Online PowerShell using multi-factor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell) for more information regarding this limitation.
+
+You can work around this limitation by creating a new account and never using it to perform an interactive authentication. It is recommended that you leverage [Azure AD PowerShell](/powershell/module/azuread/) to create the new account and perform the initial configuration. The following PowerShell can be used to create and configure the account
+
 ```powershell-interactive
 Import-Module AzureAD
 Connect-AzureAD
@@ -95,6 +100,11 @@ $user = New-AzureADUser -DisplayName "New User" -PasswordProfile $PasswordProfil
 # $adminAgentsGroup = Get-AzureADGroup -Filter "DisplayName eq 'AdminAgents'"
 # Add-AzureADGroupMember -ObjectId $adminAgentsGroup.ObjectId -RefObjectId $user.ObjectId
 ```
+
+Next time you connect to Exchange Online through PowerShell use this account and it will work as expected.
+
+> [!IMPORTANT]
+> The ability for partners to utilize their delegated administrative privileges with Exchange Online PowerShell to perform actions against their customers, when MFA is enforced, will be available in the future. Until then you should leverage this work around.
 
 #### MS Online
 
