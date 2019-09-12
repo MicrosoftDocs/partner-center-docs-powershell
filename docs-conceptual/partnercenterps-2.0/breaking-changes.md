@@ -2,7 +2,7 @@
 title: Breaking changes for Partner Center PowerShell
 description: Learn about the breaking changes for Partner Center PowerShell.
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 09/12/2019
 ---
 
 # Breaking changes

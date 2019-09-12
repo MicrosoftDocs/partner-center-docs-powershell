@@ -2,7 +2,7 @@
 title: Sign in with Partner Center PowerShell
 description: How to sign in with Partner Center PowerShell as a user, service principal, or access token.
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 09/12/2019
 ---
 
 # Sign in with Partner Center PowerShell

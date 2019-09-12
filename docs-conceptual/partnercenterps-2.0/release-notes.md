@@ -2,7 +2,7 @@
 title: Release notes for Partner Center PowerShell
 description: Discover what has changed with Partner Center PowerShell with each release.
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 09/12/2019
 ---
 
 # Release notes
