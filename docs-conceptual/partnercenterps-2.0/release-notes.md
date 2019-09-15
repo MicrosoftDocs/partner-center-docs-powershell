@@ -2,10 +2,17 @@
 title: Release notes for Partner Center PowerShell
 description: Discover what has changed with Partner Center PowerShell with each release.
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 09/14/2019
 ---
 
 # Release notes
+
+## 2.0.1909.2 - September 2019
+
+* Authentication
+  * Addressed issue [#153](https://github.com/microsoft/Partner-Center-PowerShell/issues/153) that was preventing the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) command from working as expected.
+* Dependencies
+  * Updated the version of Microsoft.Rest.ClientRuntime to the latest.
 
 ## 2.0.1909.1 - September 2019
 
