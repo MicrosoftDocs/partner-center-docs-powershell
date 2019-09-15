@@ -102,6 +102,9 @@
       "enable_powershell_try_it": {
         "partnercenterps-*/**/*.md": true
       },
+      "ms.date": {
+        "partnercenterps-2.0/**/*.md": "09/15/2019"
+      },
       "ms.topic": {
         "docs-conceptual/**/*.md": "article",
         "partnercenterps-*/**/*.md": "reference"

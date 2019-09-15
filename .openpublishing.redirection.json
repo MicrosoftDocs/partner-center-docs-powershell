@@ -1,0 +1,9 @@
+{
+  "redirections": [
+    {
+      "source_path": "secure-app-model.md",
+      "redirect_url": "multi-factor-auth",
+      "redirect_document_id": true
+    }
+  ]
+}
