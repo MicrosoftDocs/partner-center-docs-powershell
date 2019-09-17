@@ -68,7 +68,7 @@ PS C:\> Connect-PartnerCenter -Credential $credential -Tenant 'xxxx-xxxx-xxxx-xx
 
 The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the $credential variable. The second command connects to Partner Center using the service principal credentials stored in $credential for the specified Tenant. The ServicePrincipal switch parameter indicates that the account authenticates as a service principal.
 
-### Example 3: Connect to Partner using a refresh token
+### Example 3: Connect to Partner using an access token
 
 ```powershell
 PS C:\> $credential = Get-Credential
