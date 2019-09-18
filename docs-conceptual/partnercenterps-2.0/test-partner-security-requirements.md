@@ -23,7 +23,7 @@ Test-PartnerSecurityRequirement
 
 WARNING: Attempting to launch a browser for authorization code login.
 WARNING: We have launched a browser for you to login. For the old experience with device code flow, please run 'Test-PartnerSecurityRequirement -UseDeviceAuthentication'.
-WARNING: Unable to find the AMR claim, which means the ability to verify the MFA challenge happened will not be possible. See https://aka.ms/partnercenterps-psr-warning for more information.
+WARNING: Unable to find the AMR claim, which means the ability to verify the MFA challenge happened will not be possible. See https://aka.ms/partnercenterps-testing-psr for more information.
 fail
 ```
 
@@ -34,7 +34,7 @@ Test-PartnerSecurityRequirement
 
 WARNING: Attempting to launch a browser for authorization code login.
 WARNING: We have launched a browser for you to login. For the old experience with device code flow, please run 'Test-PartnerSecurityRequirement -UseDeviceAuthentication'.
-WARNING: Unable to determine if the account authenticated using MFA. See https://aka.ms/partnercenterps-psr-warning for more information.
+WARNING: Unable to determine if the account authenticated using MFA. See https://aka.ms/partnercenterps-testing-psr for more information.
 fail
 ```
 
