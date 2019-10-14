@@ -103,7 +103,8 @@
         "partnercenterps-*/**/*.md": true
       },
       "ms.date": {
-        "partnercenterps-2.0/**/*.md": "09/15/2019"
+        "partnercenterps-1.5/**/*.md": "10/15/2019",
+        "partnercenterps-2.0/**/*.md": "10/15/2019"
       },
       "ms.topic": {
         "docs-conceptual/**/*.md": "article",

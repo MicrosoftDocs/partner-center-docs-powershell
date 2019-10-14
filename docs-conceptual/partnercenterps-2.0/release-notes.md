@@ -2,10 +2,38 @@
 title: Release notes for Partner Center PowerShell
 description: Discover what has changed with Partner Center PowerShell with each release.
 ms.topic: conceptual
-ms.date: 09/18/2019
+ms.date: 10/15/2019
 ---
 
 # Release notes
+
+## 2.0.1910.1-preview - October 2019
+
+* Invoicing
+  * [Daily Rated Usage Line Item](https://github.com/microsoft/Partner-Center-PowerShell/blob/master/src/PowerShell/Models/Invoices/PSDailyRatedUsageLineItem.cs)
+    * Added the *EntitlementId*, *EntitlementDescription*, *PCToBCExchangeRate*, *PCToBCExchangeRateDate*, *EffectiveUnitPrice*, and *RateOfPartnerEarnedCredit* properties
+    * Modified the type for the *AdditionalInfo* and *Tags* properties from string to *Dictionary<string, string>*
+  * [One Time Invoice Line Item](https://github.com/microsoft/Partner-Center-PowerShell/blob/master/src/PowerShell/Models/Invoices/PSOneTimeInvoiceLineItem.cs)
+    * Added the *BillableQuantity*, *MeterDescription*, *PCToBCExchangeRateDate*, *PCToBCExchangeRate*, *PriceAdjustmentDescription*, and *PricingCurrency* properties
+* Product Upgrades
+  * Added the [Get-PartnerProductUpgrade](/powershell/module/partnercenter/Get-PartnerProductUpgrade) command to get information on product upgrades for the specified customer
+  * Added the [Get-PartnerProductUpgradeEligibility](/powershell/module/partnercenter/Get-PartnerProductUpgrade) command to determine if the specified customer has a product eligible for an upgrade
+  * Added the [Get-PartnerProductUpgradeStatus](/powershell/module/partnercenter/Get-PartnerProductUpgradeStatus) command to get the status for product upgrades for the specified customer
+  * Added the [New-PartnerProductUpgrade](/powershell/module/partnercenter/New-PartnerProductUpgrade) command to perform an upgrade for the specified customer
+* Subscriptions
+  * Added the [Get-PartnerCustomerAzurePlanEntitlement](/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
+* Usage
+  * Added the [Get-PartnerCustomerUsageRecord](/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
+
+## 2.0.1909.5 - September 2019
+
+* Dependency
+  * Corrected an issue that was preventing a dependency from being updated after a successful build
+
+## 2.0.1909.4 - September 2019
+
+* Authentication
+  * Log events from the Microsoft Authentication Library (MSAL) will now be written to the console when the debug flag is set
 
 ## 2.0.1909.3 - September 2019
 
@@ -13,12 +41,12 @@ ms.date: 09/18/2019
   * Address issue [#156](https://github.com/microsoft/Partner-Center-PowerShell/issues/156) where the refresh token was not being returned if it had not been previously used by the module during an interactive authentication attempt
   * After successfully authenticating the module will attempt to get country and locale based on the partner organization profile
 * Security
-  * Adding the [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command to help validate that the authenticating account was challenged for multi-factor authentication
+  * Adding the [Test-PartnerSecurityRequirement](/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command to help validate that the authenticating account was challenged for multi-factor authentication
 
 ## 2.0.1909.2 - September 2019
 
 * Authentication
-  * Addressed issue [#153](https://github.com/microsoft/Partner-Center-PowerShell/issues/153) that was preventing the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) command from working as expected.
+  * Addressed issue [#153](https://github.com/microsoft/Partner-Center-PowerShell/issues/153) that was preventing the [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) command from working as expected.
 * Dependencies
   * Updated the version of Microsoft.Rest.ClientRuntime to the latest.
 

@@ -2,7 +2,7 @@
 title: Testing the Partner Security Requirements
 description: Learn more about testing the partner security requirements.
 ms.topic: conceptual
-ms.date: 09/18/2019
+ms.date: 10/15/2019
 ---
 
 # Testing the Partner Security Requirements
@@ -20,7 +20,9 @@ If the claim is missing, the you will see a response similar to the following
 
 ```powershell
 Test-PartnerSecurityRequirement
+```
 
+```output
 WARNING: Attempting to launch a browser for authorization code login.
 WARNING: We have launched a browser for you to login. For the old experience with device code flow, please run 'Test-PartnerSecurityRequirement -UseDeviceAuthentication'.
 WARNING: Unable to find the AMR claim, which means the ability to verify the MFA challenge happened will not be possible. See https://aka.ms/partnercenterps-testing-psr for more information.
@@ -31,7 +33,9 @@ If the claim is present and it is missing the MFA value, then you will see a res
 
 ```powershell
 Test-PartnerSecurityRequirement
+```
 
+```output
 WARNING: Attempting to launch a browser for authorization code login.
 WARNING: We have launched a browser for you to login. For the old experience with device code flow, please run 'Test-PartnerSecurityRequirement -UseDeviceAuthentication'.
 WARNING: Unable to determine if the account authenticated using MFA. See https://aka.ms/partnercenterps-testing-psr for more information.
@@ -42,6 +46,9 @@ If the claim is present and the MFA value is present, then you will see a respon
 
 ```powershell
 Test-PartnerSecurityRequirement
+```
+
+```output
 pass
 ```
 
