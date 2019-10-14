@@ -24,6 +24,7 @@ ms.date: 10/15/2019
   * Added the [Get-PartnerCustomerAzurePlanEntitlement](/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
 * Usage
   * Added the [Get-PartnerCustomerUsageRecord](/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
+  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
 
 ## 2.0.1909.5 - September 2019
 
