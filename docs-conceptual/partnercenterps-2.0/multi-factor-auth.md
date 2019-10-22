@@ -2,7 +2,7 @@
 title: Automating tasks with PowerShell
 description: How to automate tasks in PowerShell when Multi-Factor Authentication is enforced.
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 10/22/2019
 ---
 
 # Multi-Factor Authentication
@@ -80,31 +80,29 @@ Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId 'azureuser
 
 #### Exchange Online PowerShell
 
-> [!WARNING]
-> When MFA is enforced partners will not be able to utilize their delegated administrative privileges with Exchange Online PowerShell to perform actions against their customers. See [Connect to Exchange Online PowerShell using multi-factor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell) for more information regarding this limitation.
-
-You can work around this limitation by creating a new account and never using it to perform an interactive authentication. It is recommended that you leverage [Azure AD PowerShell](/powershell/module/azuread/) to create the new account and perform the initial configuration. The following PowerShell can be used to create and configure the account
+When generating the initial refresh token, you will need to use `a0c73c16-a7e3-4564-9a95-2bdf47383716` for the application identifier. This is a native application that is correctly configured for use with Exchange Online PowerShell. Since it is a native application a public a flow like the [device code flow](https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows#device-code) must be used to obtain an access token.
 
 ```powershell-interactive
-Import-Module AzureAD
-Connect-AzureAD
-
-$PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
-
-$PasswordProfile.Password = "Password"
-$PasswordProfile.ForceChangePasswordNextLogin = $false
-
-$user = New-AzureADUser -DisplayName "New User" -PasswordProfile $PasswordProfile -UserPrincipalName "NewUser@contoso.com" -AccountEnabled $true
-
-# Uncomment the following two lines if you want the account to have Admin Agent privileges
-# $adminAgentsGroup = Get-AzureADGroup -Filter "DisplayName eq 'AdminAgents'"
-# Add-AzureADGroupMember -ObjectId $adminAgentsGroup.ObjectId -RefObjectId $user.ObjectId
+$token = New-PartnerAccessToken -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716' -Scopes 'https://outlook.office365.com/.default' -Tenant 'xxxx-xxxx-xxxx-xxxx' -UseDeviceAuthentication
 ```
 
-Next time you connect to Exchange Online through PowerShell use this account and it will work as expected.
-
 > [!IMPORTANT]
-> The ability for partners to utilize their delegated administrative privileges with Exchange Online PowerShell to perform actions against their customers, when MFA is enforced, will be available in the future. Until then you should leverage this work around.
+> After invoking the commands above, you will find the refresh token value is available through `$token.RefreshToken`. This value should be stored in a secure repository such as [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) to ensure that is appropriately secure because it will be used instead of credentials.
+
+```powershell-interactive
+$customerId = '<CustomerId>'
+$refreshToken = '<RefreshTokenValue>'
+$upn = '<UPN-used-to-generate-the-refresh-token>'
+
+$token = New-PartnerAccessToken -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://outlook.office365.com/.default' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
+
+$tokenValue = ConvertTo-SecureString "Bearer $($token.AccessToken)" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential($upn, $tokenValue)
+
+$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://ps.outlook.com/powershell-liveid?DelegatedOrg=$($customerId)&BasicAuthToOAuthConversion=true" -Credential $credential -Authentication Basic -AllowRedirection
+
+Import-PSSession $session
+```
 
 #### MS Online
 
