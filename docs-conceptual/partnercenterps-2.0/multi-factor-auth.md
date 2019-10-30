@@ -30,6 +30,9 @@ $credential = Get-Credential
 New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Credential $credential -Tenant 'xxxx-xxxx-xxxx-xxxx' -UseAuthorizationCode
 ```
 
+> [!IMPORTANT]
+> When using the `UseAuthorizationCode` parameter you will be prompted to authentication interactively using the authorization code flow. The redirect URI value will generated dynamically. This generation process will attempt to find a port between 8400 and 8999 that is not in use. Once an available port has been found, the redirect URL value will be constructed (e.g. <http://localhost:8400>). So, it is important that you have configured the redirect URI value for your Azure Active Directory application accordingly.
+
 The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. The second command will generate a new access token using the service principal credentials stored in the `$credential` variable and the authorization code flow. The output from this command will contain several values, including a refresh token. That value should be stored somewhere secure such as [Azure Key Vault](/azure/key-vault/key-vault-whatis) because it will be used instead of user credentials in future operations.
 
 ### Exchange
@@ -64,6 +67,9 @@ $graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Crede
 Connect-AzAccount -AccessToken $token.AccessToken -AccountId 'azureuser@contoso.com' -GraphAccessToken $graphToken.AccessToken -TenantId 'xxxx-xxxx-xxxx-xxxx'
 ```
 
+> [!NOTE]
+> When connecting to an environment where you have admin on behalf of privileges, you will need to specify the tenant identifier for the target environment through the `Tenant` parameter. With respect to the Cloud Solution Provider program this means you will specify the tenant identifier of the customer's Azure Active Directory tenant using the `Tenant` parameter.
+
 ### Microsoft 365
 
 #### Azure Active Directory
@@ -77,6 +83,9 @@ $graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Crede
 
 Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId 'azureuser@contoso.com' -MsAccessToken $graphToken.AccessToken
 ```
+
+> [!NOTE]
+> When connecting to an environment where you have admin on behalf of privileges, you will need to specify the tenant identifier for the target environment through the `Tenant` parameter. With respect to the Cloud Solution Provider program this means you will specify the tenant identifier of the customer's Azure Active Directory tenant using the `Tenant` parameter.
 
 #### Exchange Online PowerShell
 
@@ -123,5 +132,5 @@ $credential = Get-Credential
 $refreshToken = '<refreshToken>'
 $token = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
 
-Connect-PartnerCenter -AccessToken $token.AccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Tenant 'xxxx-xxxx-xxxx-xxxx'
+Connect-PartnerCenter -AccessToken $token.AccessToken
 ```
