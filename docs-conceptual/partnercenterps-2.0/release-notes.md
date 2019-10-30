@@ -7,24 +7,29 @@ ms.date: 10/15/2019
 
 # Release notes
 
-## 2.0.1910.1-preview - October 2019
+## 2.0.1911.1 - November 2019
 
+* Authentication
+  * Addressed issue preventing CTRL+C from interrupting the waiting for a response during the interactive authentication scenario
 * Invoicing
   * [Daily Rated Usage Line Item](https://github.com/microsoft/Partner-Center-PowerShell/blob/master/src/PowerShell/Models/Invoices/PSDailyRatedUsageLineItem.cs)
     * Added the *EntitlementId*, *EntitlementDescription*, *PCToBCExchangeRate*, *PCToBCExchangeRateDate*, *EffectiveUnitPrice*, and *RateOfPartnerEarnedCredit* properties
     * Modified the type for the *AdditionalInfo* and *Tags* properties from string to *Dictionary<string, string>*
   * [One Time Invoice Line Item](https://github.com/microsoft/Partner-Center-PowerShell/blob/master/src/PowerShell/Models/Invoices/PSOneTimeInvoiceLineItem.cs)
     * Added the *BillableQuantity*, *MeterDescription*, *PCToBCExchangeRateDate*, *PCToBCExchangeRate*, *PriceAdjustmentDescription*, and *PricingCurrency* properties
+* Partner
+  * Added the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgrade) command to get partner user accounts
+    * Added the [Get-PartnerUserSignActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignActivity) command to get sign-in activities for the specified user account
 * Product Upgrades
-  * Added the [Get-PartnerProductUpgrade](/powershell/module/partnercenter/Get-PartnerProductUpgrade) command to get information on product upgrades for the specified customer
-  * Added the [Get-PartnerProductUpgradeEligibility](/powershell/module/partnercenter/Get-PartnerProductUpgrade) command to determine if the specified customer has a product eligible for an upgrade
-  * Added the [Get-PartnerProductUpgradeStatus](/powershell/module/partnercenter/Get-PartnerProductUpgradeStatus) command to get the status for product upgrades for the specified customer
-  * Added the [New-PartnerProductUpgrade](/powershell/module/partnercenter/New-PartnerProductUpgrade) command to perform an upgrade for the specified customer
+  * Added the [Get-PartnerProductUpgrade](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgrade) command to get information on product upgrades for the specified customer
+  * Added the [Get-PartnerProductUpgradeEligibility](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgrade) command to determine if the specified customer has a product eligible for an upgrade
+  * Added the [Get-PartnerProductUpgradeStatus](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgradeStatus) command to get the status for product upgrades for the specified customer
+  * Added the [New-PartnerProductUpgrade](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerProductUpgrade) command to perform an upgrade for the specified customer
 * Subscriptions
-  * Added the [Get-PartnerCustomerAzurePlanEntitlement](/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
+  * Added the [Get-PartnerCustomerAzurePlanEntitlement](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
 * Usage
-  * Added the [Get-PartnerCustomerUsageRecord](/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
-  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
+  * Added the [Get-PartnerCustomerUsageRecord](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
+  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
 
 ## 2.0.1909.5 - September 2019
 

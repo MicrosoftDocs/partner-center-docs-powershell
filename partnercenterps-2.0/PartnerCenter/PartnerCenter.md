@@ -2,13 +2,13 @@
 Module Name: PartnerCenter
 Module Guid: 70cb9a9e-1491-403a-8a2f-63e1afe7dfee
 Download Help Link: none
-Help Version: 1.0
+Help Version: 2.0
 Locale: en-US
 ---
 
 # PartnerCenter Module
 ## Description
-These are the cmdlets in the Partner Center PowerShell module.
+These are the cmdlets available in the Partner Center PowerShell module.
 
 ## PartnerCenter Cmdlets
 ### [Add-PartnerCustomerCartLineItem](Add-PartnerCustomerCartLineItem.md)
@@ -192,7 +192,7 @@ Gets a list of offer categories.
 Gets the partner organization profile from Partner Center.
 
 ### [Get-PartnerProduct](Get-PartnerProduct.md)
-Gets a list or a single product.
+Gets information for the available products.
 
 ### [Get-PartnerProductAvailability](Get-PartnerProductAvailability.md)
 Gets the availability for a specified product.
@@ -201,7 +201,7 @@ Gets the availability for a specified product.
 Checks the inventory for the specified product.
 
 ### [Get-PartnerProductSku](Get-PartnerProductSku.md)
-Gets the list of SKUs for a product.
+Gets the available SKUs for the specified product.
 
 ### [Get-PartnerProductUpgradeEligibility](Get-PartnerProductUpgradeEligibility.md)
 Gets the product upgrade eligibility for the specified customer and product family.
@@ -229,6 +229,12 @@ Gets a list of service request topics.
 
 ### [Get-PartnerSupportProfile](Get-PartnerSupportProfile.md)
 Gets the partner's support profile.
+
+### [Get-PartnerUser](Get-PartnerUser.md)
+Gets a list of users from the partner tenant
+
+### [Get-PartnerUserSignInActivity](Get-PartnerUserSignInActivity.md)
+Gets the sign activities for the specified user.
 
 ### [Get-PartnerValidationCode](Get-PartnerValidationCode.md)
 Gets a collection of a partner's Government Community Cloud validation codes.
