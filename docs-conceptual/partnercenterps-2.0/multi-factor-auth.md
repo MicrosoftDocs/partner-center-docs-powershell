@@ -2,7 +2,7 @@
 title: Automating tasks with PowerShell
 description: How to automate tasks in PowerShell when Multi-Factor Authentication is enforced.
 ms.topic: conceptual
-ms.date: 10/22/2019
+ms.date: 10/26/2019
 ---
 
 # Multi-Factor Authentication
@@ -103,7 +103,7 @@ $customerId = '<CustomerId>'
 $refreshToken = '<RefreshTokenValue>'
 $upn = '<UPN-used-to-generate-the-refresh-token>'
 
-$token = New-PartnerAccessToken -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://outlook.office365.com/.default' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
+$token = New-PartnerAccessToken -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716' -RefreshToken $refreshToken -Scopes 'https://outlook.office365.com/.default' -Tenant 'xxxx-xxxx-xxxx-xxxx'
 
 $tokenValue = ConvertTo-SecureString "Bearer $($token.AccessToken)" -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential($upn, $tokenValue)

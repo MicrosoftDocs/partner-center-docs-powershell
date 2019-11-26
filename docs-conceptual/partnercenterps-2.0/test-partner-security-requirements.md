@@ -63,7 +63,7 @@ If you are using Active Directory Federation Service (ADFS), then you will need 
 
 ## Additional Information
 
-The [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command decodes the access token generated as a result of a successful authentication attempt. Next it will check if the authentication method reference (ARM) claim is present. If the claim is present, then it will confirm that the MFA value is listed. You can reproduce this test by decoding an access token using the [JWT Decoder](https://adfshelp.microsoft.com/JwtDecoder/GetToken) and checking the values listed in the AMR element.
+The [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command decodes the access token generated as a result of a successful authentication attempt. Next it will check if the authentication method reference (AMR) claim is present. If the claim is present, then it will confirm that the MFA value is listed. You can reproduce this test by decoding an access token using the [JWT Decoder](https://adfshelp.microsoft.com/JwtDecoder/GetToken) and checking the values listed in the AMR element.
 
 The following is an example of a decoded access token that correctly reflects the account was challenged for multi-factor authentication.
 

@@ -50,7 +50,7 @@ Gets the sign-in activities from the past seven days that have successfully auth
 ### Example 4
 ```powershell
 PS C:> $users = Get-PartnerUser
-PS C:> $activities = $users.ForEach({Get-PartnerUserSignInActivity -StartDate (Get-Date).AddDays(-7) -UserId $_.Id})
+PS C:> $activities = $users.ForEach({Get-PartnerUserSignInActivity -EndDate (Get-Date) -StartDate (Get-Date).AddDays(-7) -UserId $_.Id})
 PS C:> $activities | ? {$_.AuthenticationDetails | ? {$_.Succeeded -eq $true}} | ? {$_.ResourceId -eq 'fa3d9a0c-3fb0-42cc-9193-47c7ecd2edbd'}
 ```
 
@@ -68,7 +68,7 @@ Gets the sign-in activities from the past seven days that have successfully auth
 ### Example 6
 ```powershell
 PS C:> $users = Get-PartnerUser
-PS C:> $activities = $users.ForEach({Get-PartnerUserSignInActivity -StartDate (Get-Date).AddDays(-7) -UserId $_.Id})
+PS C:> $activities = $users.ForEach({Get-PartnerUserSignInActivity -EndDate (Get-Date) -StartDate (Get-Date).AddDays(-7) -UserId $_.Id})
 PS C:> $activities | ? {$_.AuthenticationDetails | ? {$_.Succeeded -eq $true}} | ? {$_.MfaDetail -eq $null} | ? {$_.ResourceId -eq 'fa3d9a0c-3fb0-42cc-9193-47c7ecd2edbd'}
 ```
 

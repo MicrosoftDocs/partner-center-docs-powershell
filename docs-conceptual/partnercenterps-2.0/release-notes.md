@@ -2,10 +2,16 @@
 title: Release notes for Partner Center PowerShell
 description: Discover what has changed with Partner Center PowerShell with each release.
 ms.topic: conceptual
-ms.date: 11/20/2019
+ms.date: 11/26/2019
 ---
 
 # Release notes
+
+## 2.0.1911.5 - November 2019
+
+* Security
+  * Optimized the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgrade) command
+  * Optimized the [Get-PartnerUserSignActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignActivity) command
 
 ## 2.0.1911.4 - November 2019
 
