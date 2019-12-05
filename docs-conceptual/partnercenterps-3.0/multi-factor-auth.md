@@ -131,8 +131,5 @@ Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAcces
 $credential = Get-Credential
 $refreshToken = '<refreshToken>'
 
-$credential = Get-Credential
-$refreshToken = '<refreshToken>'
-
 Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -RefreshToken $refreshToken
 ```

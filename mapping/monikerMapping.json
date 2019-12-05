@@ -10,5 +10,11 @@
         "conceptualToc": "docs-conceptual/partnercenterps-2.0/toc.yml",
         "conceptualTocUrl": "/powershell/partnercenter/toc.json",
         "referenceTocUrl": "/powershell/module/partnercenter/toc.json"
+    },
+    "partnercenterps-3.0": {
+        "packageRoot": "partnercenterps-3.0",
+        "conceptualToc": "docs-conceptual/partnercenterps-3.0/toc.yml",
+        "conceptualTocUrl": "/powershell/partnercenter/toc.json",
+        "referenceTocUrl": "/powershell/module/partnercenter/toc.json"
     }
 }
