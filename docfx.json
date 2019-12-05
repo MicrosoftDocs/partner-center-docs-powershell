@@ -79,6 +79,42 @@
         "src": "docs-conceptual/partnercenterps-2.0",
         "version": "partnercenterps-2.0",
         "dest": "partnercenter"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "breadcrumb",
+        "version": "partnercenterps-3.0",
+        "dest": "partnercenter/breadcrumb"
+      },
+      {
+        "files": [
+          "toc.yml"
+        ],
+        "src": "partnercenterps-3.0",
+        "version": "partnercenterps-3.0",
+        "dest": "module/partnercenter"
+      },
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "partnercenterps-3.0",
+        "version": "partnercenterps-3.0",
+        "exclude": [
+          "docs-conceptual/**"
+        ],
+        "dest": "module"
+      },
+      {
+        "files": [
+          "**/*.yml",
+          "**/*.md"
+        ],
+        "src": "docs-conceptual/partnercenterps-3.0",
+        "version": "partnercenterps-3.0",
+        "dest": "partnercenter"
       }
     ],
     "resource": [
@@ -104,7 +140,8 @@
       },
       "ms.date": {
         "partnercenterps-1.5/**/*.md": "10/15/2019",
-        "partnercenterps-2.0/**/*.md": "11/26/2019"
+        "partnercenterps-2.0/**/*.md": "11/26/2019",
+        "partnercenterps-3.0/**/*.md": "11/26/2019"
       },
       "ms.topic": {
         "docs-conceptual/**/*.md": "article",

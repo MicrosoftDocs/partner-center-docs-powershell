@@ -2,10 +2,43 @@
 title: Release notes for Partner Center PowerShell
 description: Discover what has changed with Partner Center PowerShell with each release.
 ms.topic: conceptual
-ms.date: 11/26/2019
+ms.date: 12/06/2019
 ---
 
 # Release notes
+
+## 3.0.0 - December 2019
+
+* Agreement
+  * Added the [Get-PartnerAgreementStatus](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerAgreementStatus) command to get the status of acceptance of the Microsoft Partner Agreement for the specified partner
+* Authentication
+  * Added the `AzureAccessToken` parameter to the [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) command, this value will be used to interact with Azure when using commands that leverage the Azure Resource Manager API
+  * Updated how [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) writes warnings during an authentication attempt
+  * Updated how [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) prompts for interaction
+  * When using [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) with an access token the account and tenant information are now extracted from the access token
+* Azure
+  * Added the [Get-PartnerAzureBillingPolicy](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerAzureBillingPolicy) to get the billing policy for the specified customer
+  * Added the [Set-PartnerAzureBillingPolicy](https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerAzureBillingPolicy) to update the billing policy for the specified customer
+* Build
+  * Updating the test project from .NET Core 2.2 to .NET 3.0
+* Dependency
+  * Updated to the latest version of the Partner Center SDK for .NET
+* Invoice
+  * Added the `Period` parameter to the [Get-PartnerInvoiceLineItem](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerInvoiceLineItem) command to provide a way for the user to specify if they want the current or previous unbilled line items
+  * Addressed issue [#202](https://github.com/microsoft/Partner-Center-PowerShell/issues/202) that was returning request for invoice line items with no errors
+* Module
+  * Addressed issue [#217](https://github.com/microsoft/Partner-Center-PowerShell/issues/217) that was impacting executing commands through Azure Automation
+  * Updated the transient error strategy for network operations
+  * When running any command with with the `Debug` parameter the request and response from the API will be written to the console in addition to any operation specific debug information
+* Security
+  * Modified the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUser) command to leverage a task scheduler for requesting from Microsoft Graph
+  * Modified the [Get-PartnerUserSignActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignActivity) command to leverage a task scheduler for requesting from Microsoft Graph
+  * Updated how [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) prompts for interaction
+* Subscription
+  * Addressed an issue where the request for subscriptions by partner was causing an `InvalidCastException` to be thrown
+  * Corrected the output for the [Get-PartnerCustomerAzurePlanEntitlement](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command
+* Validation
+  * Addressed a scenario where a `NullReferenceException` could be thrown when running the [Test-PartnerAddress](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerAddress) command
 
 ## 2.0.1911.5 - November 2019
 
