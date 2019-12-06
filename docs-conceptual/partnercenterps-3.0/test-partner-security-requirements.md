@@ -1,8 +1,6 @@
 ---
 title: Testing the Partner Security Requirements
 description: Learn more about testing the partner security requirements.
-ms.topic: conceptual
-ms.date: 10/15/2019
 ---
 
 # Testing the Partner Security Requirements

@@ -1,8 +1,6 @@
 ---
 title: Automating tasks with PowerShell
 description: How to automate tasks in PowerShell when Multi-Factor Authentication is enforced.
-ms.topic: conceptual
-ms.date: 12/06/2019
 ---
 
 # Multi-Factor Authentication

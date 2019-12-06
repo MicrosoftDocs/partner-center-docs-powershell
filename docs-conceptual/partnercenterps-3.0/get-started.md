@@ -1,8 +1,6 @@
 ---
 title: Get started with Partner Center PowerShell
 description: Learn how to get started with Partner Center PowerShell.
-ms.topic: get-started-article
-ms.date: 12/06/2019
 ---
 
 # Get started with Partner Center PowerShell
