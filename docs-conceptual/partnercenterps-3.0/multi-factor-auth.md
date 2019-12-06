@@ -87,21 +87,23 @@ Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId 'azureuser
 
 #### Exchange Online PowerShell
 
-When generating the initial refresh token, you will need to use `a0c73c16-a7e3-4564-9a95-2bdf47383716` for the application identifier. This is a native application that is correctly configured for use with Exchange Online PowerShell. Since it is a native application a public a flow like the [device code flow](https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows#device-code) must be used to obtain an access token.
+When generating the initial refresh token, you will need to use following
 
 ```powershell
-$token = New-PartnerAccessToken -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716' -Scopes 'https://outlook.office365.com/.default' -Tenant 'xxxx-xxxx-xxxx-xxxx' -UseDeviceAuthentication
+$token = New-PartnerAccessToken -Module ExchangeOnline
 ```
 
 > [!IMPORTANT]
 > After invoking the commands above, you will find the refresh token value is available through `$token.RefreshToken`. This value should be stored in a secure repository such as [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) to ensure that is appropriately secure because it will be used instead of credentials.
+
+Use the following to generate a new access token using the refresh, and then create the session where you will connect to Exchange Online PowerShell
 
 ```powershell
 $customerId = '<CustomerId>'
 $refreshToken = '<RefreshTokenValue>'
 $upn = '<UPN-used-to-generate-the-refresh-token>'
 
-$token = New-PartnerAccessToken -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716' -RefreshToken $refreshToken -Scopes 'https://outlook.office365.com/.default' -Tenant $customerId
+$token = New-PartnerAccessToken -Module ExchangeOnline -RefreshToken $token.RefreshToken -Tenant $customerId
 
 $tokenValue = ConvertTo-SecureString "Bearer $($token.AccessToken)" -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential($upn, $tokenValue)
