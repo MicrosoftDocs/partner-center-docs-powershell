@@ -5,6 +5,11 @@ description: Learn about the breaking changes for Partner Center PowerShell.
 
 # Breaking changes
 
+## Release 3.0.1 - December 2019
+
+* Authentication
+  * [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) the `EnforceMfa` parameter has been removed
+
 ## Release 3.0.0 - December 2019
 
 * Subscription
