@@ -73,4 +73,4 @@ please [file an issue on GitHub](https://github.com/microsoft/partner-center-pow
 
 ## Provide feedback
 
-If you find a bug in Partner Center Powershell or have feedback, [file an issue on GitHub](https://github.com/microsoft/partner-center-powersehll/issues).
+If you find a bug in Partner Center Powershell or have feedback, [file an issue on GitHub](https://github.com/microsoft/partner-center-powershell/issues).
