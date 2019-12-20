@@ -5,6 +5,11 @@ description: Discover what has changed with Partner Center PowerShell with each 
 
 # Release notes
 
+## 3.0.2 - December 2019
+
+* Authentication
+  * Addressed issue [#230](https://github.com/microsoft/Partner-Center-PowerShell/issues/230) that was caused by a deadlock
+
 ## 3.0.1 - December 2019
 
 * Authentication
