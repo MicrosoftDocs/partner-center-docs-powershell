@@ -245,6 +245,9 @@ Gets a list of service request topics.
 ### [Get-PartnerSupportProfile](Get-PartnerSupportProfile.md)
 Gets the partner's support profile.
 
+### [Get-PartnerUnbilledInvoiceLineItem](Get-PartnerUnbilledInvoiceLineItem.md)
+Gets the unbilled invoice line items.
+
 ### [Get-PartnerUser](Get-PartnerUser.md)
 Gets a list of users from the partner tenant
 
@@ -295,6 +298,9 @@ Creates a product upgrade request for the specified customer.
 
 ### [New-PartnerServiceRequest](New-PartnerServiceRequest.md)
 Creates a service request at the partner level.
+
+### [Register-PartnerTokenCache](Register-PartnerTokenCache.md)
+Registers the specified token cache for the module.
 
 ### [Remove-PartnerCustomerConfigurationPolicy](Remove-PartnerCustomerConfigurationPolicy.md)
 Removes the specified configuration policy.
@@ -376,3 +382,4 @@ Tests if the specified domain name is available for creating a new tenant.
 
 ### [Test-PartnerSecurityRequirement](Test-PartnerSecurityRequirement.md)
 Tests the account, used during authentication, if multi-factor authentication was enforced.
+
