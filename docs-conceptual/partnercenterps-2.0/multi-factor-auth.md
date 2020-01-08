@@ -134,5 +134,5 @@ $refreshToken = '<refreshToken>'
 $credential = Get-Credential
 $refreshToken = '<refreshToken>'
 
-Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -RefreshToken $refreshToken
+Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -RefreshToken $refreshToken -Credential $credential
 ```
