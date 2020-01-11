@@ -31,7 +31,7 @@ New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Scopes 'https://api
 > [!IMPORTANT]
 > When using the `UseAuthorizationCode` parameter you will be prompted to authentication interactively using the authorization code flow. The redirect URI value will generated dynamically. This generation process will attempt to find a port between 8400 and 8999 that is not in use. Once an available port has been found, the redirect URL value will be constructed (e.g. <http://localhost:8400>). So, it is important that you have configured the redirect URI value for your Azure Active Directory application accordingly.
 
-The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. The second command will generate a new access token using the service principal credentials stored in the `$credential` variable and the authorization code flow. The output from this command will contain several values, including a refresh token. That value should be stored somewhere secure such as [Azure Key Vault](/azure/key-vault/key-vault-whatis) because it will be used instead of user credentials in future operations.
+The first command gets the service principal credentials (application identifier and secret), and then stores them in the `$credential` variable. The second command will generate a new access token using the service principal credentials stored in the `$credential` variable and the authorization code flow. The output from this command will contain several values, including a refresh token. That value should be stored somewhere secure such as [Azure Key Vault](/azure/key-vault/key-vault-whatis) because it will be used instead of user credentials in future operations.
 
 ### Exchange
 
@@ -44,7 +44,7 @@ $refreshToken = '<refreshToken>'
 New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
 ```
 
-The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. The third command will generate a new access token using the service principal credentials stored in the `$credential` variable and the refresh token stored in the `$refreshToken` variable for authentication.
+The first command gets the service principal credentials (application identifier and secret), and then stores them in the `$credential` variable. The third command will generate a new access token using the service principal credentials stored in the `$credential` variable and the refresh token stored in the `$refreshToken` variable for authentication.
 
 ## Samples
 
@@ -134,4 +134,4 @@ $refreshToken = '<refreshToken>'
 Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken
 ```
 
-The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. This is required if the refresh token was generate using a web application.
+The first command gets the service principal credentials (application identifier and secret), and then stores them in the `$credential` variable. This is required if the refresh token was generate using a web application because Azure Active Directory requires the application identifier and secret be included with the request.

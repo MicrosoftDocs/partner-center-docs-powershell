@@ -133,3 +133,5 @@ $refreshToken = '<refreshToken>'
 
 Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken
 ```
+
+The first command gets the service principal credentials (application identifier and secret), and then stores them in the `$credential` variable. This is required if the refresh token was generate using a web application because Azure Active Directory requires the application identifier and secret be included with the request.
