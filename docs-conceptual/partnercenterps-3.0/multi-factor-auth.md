@@ -25,7 +25,7 @@ The consent step can be performed through several different methods. When using 
 
 ```powershell
 $credential = Get-Credential
-New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Credential $credential -Tenant 'xxxx-xxxx-xxxx-xxxx' -UseAuthorizationCode
+New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Credential $credential -Tenant 'yyyy-yyyy-yyyy-yyyy' -UseAuthorizationCode
 ```
 
 > [!IMPORTANT]
@@ -41,7 +41,7 @@ The exchange step can be performed through a number of different methods. When u
 $credential = Get-Credential
 $refreshToken = '<refreshToken>'
 
-New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
+New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
 ```
 
 The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. The third command will generate a new access token using the service principal credentials stored in the `$credential` variable and the refresh token stored in the `$refreshToken` variable for authentication.
@@ -58,8 +58,8 @@ The following sections demonstrate how to use the [New-PartnerAccessToken](/powe
 $credential = Get-Credential
 $refreshToken = '<RefreshToken>'
 
-$azureToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://management.azure.com//user_impersonation' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
-$graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.microsoft.com/.default' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
+$azureToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://management.azure.com//user_impersonation' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
+$graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.microsoft.com/.default' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
 
 # Az Module
 Connect-AzAccount -AccessToken $token.AccessToken -AccountId 'azureuser@contoso.com' -GraphAccessToken $graphToken.AccessToken -TenantId 'xxxx-xxxx-xxxx-xxxx'
@@ -76,8 +76,8 @@ Connect-AzAccount -AccessToken $token.AccessToken -AccountId 'azureuser@contoso.
 $credential = Get-Credential
 $refreshToken = '<RefreshToken>'
 
-$aadGraphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.windows.net/.default' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
-$graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.microsoft.com/.default' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
+$aadGraphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.windows.net/.default' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
+$graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.microsoft.com/.default' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
 
 Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId 'azureuser@contoso.com' -MsAccessToken $graphToken.AccessToken
 ```
@@ -119,8 +119,8 @@ Import-PSSession $session
 $credential = Get-Credential
 $refreshToken = '<RefreshToken>'
 
-$aadGraphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.windows.net/.default' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
-$graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.microsoft.com/.default' -ServicePrincipal -Tenant 'xxxx-xxxx-xxxx-xxxx'
+$aadGraphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.windows.net/.default' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
+$graphToken = New-PartnerAccessToken -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.microsoft.com/.default' -ServicePrincipal -Tenant 'yyyy-yyyy-yyyy-yyyy'
 
 Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAccessToken $graphToken.AccessToken
 ```
@@ -131,5 +131,7 @@ Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAcces
 $credential = Get-Credential
 $refreshToken = '<refreshToken>'
 
-Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -RefreshToken $refreshToken
+Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -Credential $credential -RefreshToken $refreshToken
 ```
+
+The first command gets the service principal credentials (application identifier and service principal secret), and then stores them in the `$credential` variable. This is required if the refresh token was generate using a web application.

@@ -5,6 +5,20 @@ description: Discover what has changed with Partner Center PowerShell with each 
 
 # Release notes
 
+## 3.0.5 - January 2020
+
+* Authentication
+  * Addressed issue [#254](https://github.com/microsoft/Partner-Center-PowerShell/issues/254) with the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) where the Scope parameter was incorrectly being required
+
+## 3.0.4 - January 2020
+
+* Authentication
+  * Addressed an issue where NullReferenceException exception was being encountered when invoking [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) using a certificate
+  * Addressed an issue where NullReferenceException exception was being encountered when invoking [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) using a certificate
+  * Defined the refresh token parameter set for the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) command to make it easier to ensure all the appropriate parameters have been specified when exchanging a refresh token for an access token
+* Module
+  * All commands now perform operations asynchronously
+
 ## 3.0.3 - December 2019
 
 * Authentication

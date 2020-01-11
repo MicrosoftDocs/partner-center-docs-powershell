@@ -142,12 +142,12 @@
     },
     "filemetadata": {
       "enable_powershell_try_it": {
-        "partnercenterps-*/**/*.md": true
+        "partnercenterps-*/**/*.md": false
       },
       "ms.date": {
         "partnercenterps-1.5/**/*.md": "12/19/2019",
-        "partnercenterps-2.0/**/*.md": "12/19/2019",
-        "partnercenterps-3.0/**/*.md": "12/27/2019"
+        "partnercenterps-2.0/**/*.md": "01/10/2019",
+        "partnercenterps-3.0/**/*.md": "01/10/2019"
       },
       "ms.topic": {
         "docs-conceptual/**/*.md": "article",
