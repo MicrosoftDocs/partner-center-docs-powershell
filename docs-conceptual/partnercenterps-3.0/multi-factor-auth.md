@@ -93,6 +93,9 @@ When generating the initial refresh token, you will need to use following
 $token = New-PartnerAccessToken -Module ExchangeOnline
 ```
 
+> [!NOTE]
+> The refresh token to be used to generate an Exchange Online access token **must** be obtained via the above PowerShell command. Unlike a refresh token for obtaining access tokens to connect to Partner Center API, Graph API, etc. this token **cannot** be obtained via a call to `https://login.microsoftonline.com/sandboxendurancecsp.onmicrosoft.com/oauth2/token`. 
+
 > [!IMPORTANT]
 > After invoking the commands above, you will find the refresh token value is available through `$token.RefreshToken`. This value should be stored in a secure repository such as [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) to ensure that is appropriately secure because it will be used instead of credentials.
 
@@ -103,15 +106,19 @@ $customerId = '<CustomerId>'
 $refreshToken = '<RefreshTokenValue>'
 $upn = '<UPN-used-to-generate-the-refresh-token>'
 
-$token = New-PartnerAccessToken -Module ExchangeOnline -RefreshToken $token.RefreshToken -Tenant $customerId
+$token = New-PartnerAccessToken -RefreshToken $token.RefreshToken -Scopes 'https://outlook.office365.com/.default' -Tenant $customerId -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716'
 
 $tokenValue = ConvertTo-SecureString "Bearer $($token.AccessToken)" -AsPlainText -Force
+
 $credential = New-Object System.Management.Automation.PSCredential($upn, $tokenValue)
 
 $session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid?DelegatedOrg=$($customerId)&BasicAuthToOAuthConversion=true" -Credential $credential -Authentication Basic -AllowRedirection
 
 Import-PSSession $session
 ```
+
+> [!NOTE]
+> The value of the `application_id` parameter in this call must be exactly as shown (`'a0c73c16-a7e3-4564-9a95-2bdf47383716'`); it is the ID for the Exchange Online app (not your custom app, if one exists).
 
 #### MS Online
 
