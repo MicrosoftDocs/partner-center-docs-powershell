@@ -166,7 +166,7 @@
       "ms.author": "iswillia",
       "ms.devlang": "powershell",
       "ms.prod": "partner-center",
-      "searchScope": [ "Partner Center", "Partner Center developer resources",  "Partner Center PowerShell" ] 
+      "searchScope": [ "Partner Center", "Partner Center developer resources",  "Partner Center PowerShell" ],
       "showPowerShellPicker": "true",
       "uhfHeaderId": "MSDocsHeader-Partner-Center"
     },
