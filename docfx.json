@@ -163,10 +163,12 @@
       "feedback_system": "GitHub",
       "feedback_product_url": "https://github.com/microsoft/partner-center-powerShell/issues/new",
       "ms.author": "iswillia",
+      "manager": "jasonh",
       "ms.devlang": "powershell",
       "ms.prod": "partner-center",
       "showPowerShellPicker": "true",
-      "uhfHeaderId": "MSDocsHeader-Partner-Center"
+      "uhfHeaderId": "MSDocsHeader-Partner-Center",
+      "searchScope": ["Partner Center", "Partner Center developer resources","Partner Center PowerShell"] 
     },
     "dest": "partnercenterps",
     "markdownEngineName": "markdig"
