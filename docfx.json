@@ -162,9 +162,11 @@
       "feedback_github_repo": "microsoftdocs/partner-center-docs-powershell",
       "feedback_system": "GitHub",
       "feedback_product_url": "https://github.com/microsoft/partner-center-powerShell/issues/new",
+      "manager": "jasonh",
       "ms.author": "iswillia",
       "ms.devlang": "powershell",
       "ms.prod": "partner-center",
+      "searchScope": [ "Partner Center", "Partner Center developer resources",  "Partner Center PowerShell" ] 
       "showPowerShellPicker": "true",
       "uhfHeaderId": "MSDocsHeader-Partner-Center"
     },
