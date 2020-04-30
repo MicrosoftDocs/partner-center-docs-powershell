@@ -1,6 +1,7 @@
 ---
 title: Install Partner Center PowerShell with PowerShellGet
 description: How to install Partner Center PowerShell with PowerShellGet
+ms.date: 12/05/2019
 ---
 
 # Partner Center PowerShell

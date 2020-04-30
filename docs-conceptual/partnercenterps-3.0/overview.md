@@ -1,6 +1,7 @@
 ---
 title: Install Partner Center PowerShell with PowerShellGet
 description: An overview of the Partner Center PowerShell module, with information on how to install and get started.
+ms.date: 12/05/2019
 ---
 
 # Overview of Partner Center PowerShell
