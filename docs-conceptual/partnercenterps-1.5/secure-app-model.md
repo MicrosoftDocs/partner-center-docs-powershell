@@ -167,7 +167,7 @@ When you are prompted for credentials specify the application identifier and app
 
 ### Azure
 
-The Az and Azure PowerShell modules both support the ability to authenticate using access tokens. The following commands demonstrate hot utilize a refresh token to obtain the required access token to connect using the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) or [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) commands.
+The Az and AzureRM PowerShell modules both support the ability to authenticate using access tokens. The following commands demonstrate how to utilize a refresh token to obtain the required access token to connect using the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) or [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) commands.
 
 ```powershell
 $credential = Get-Credential
