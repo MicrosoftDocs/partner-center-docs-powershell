@@ -104,6 +104,7 @@ Use the following to generate a new access token using the refresh, and then cre
 
 ```powershell
 $customerId = '<CustomerId>'
+$customerDomainName = '<CustomerDomainName>'
 $refreshToken = '<RefreshTokenValue>'
 $upn = '<UPN-used-to-generate-the-refresh-token>'
 
@@ -112,7 +113,7 @@ $token = New-PartnerAccessToken -RefreshToken $token.RefreshToken -Scopes 'https
 $tokenValue = ConvertTo-SecureString "Bearer $($token.AccessToken)" -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential($upn, $tokenValue)
 
-$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid?DelegatedOrg=$($customerId)&BasicAuthToOAuthConversion=true" -Credential $credential -Authentication Basic -AllowRedirection
+$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid?DelegatedOrg=$($customerDomainName)&BasicAuthToOAuthConversion=true" -Credential $credential -Authentication Basic -AllowRedirection
 
 Import-PSSession $session
 ```
