@@ -150,7 +150,7 @@
         "partnercenterps-3.0/**/*.yml": "01/29/2020"
       },
       "ms.topic": {
-        "docs-conceptual/**/*.yml": "article",
+        "docs-conceptual/**/*.md": "article",
         "partnercenterps-*/**/*.yml": "reference"
       }
     },
