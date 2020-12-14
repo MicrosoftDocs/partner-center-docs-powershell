@@ -1,5 +1,5 @@
 ---
-title: Multi-Factor Authentication using PowerShell 
+title: Partner Center multi-factor authentication using PowerShell 
 description: How to automate tasks in PowerShell when Multi-Factor Authentication is enforced.
 ms.date: 06/25/2020
 ---
