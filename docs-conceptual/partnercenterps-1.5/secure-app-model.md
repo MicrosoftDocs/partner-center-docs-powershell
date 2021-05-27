@@ -180,7 +180,6 @@ $tenantId = '<Your Tenant Id>'
 $credential = Get-Credential
 $azureToken = New-PartnerAccessToken -ApplicationId $appId -Scopes 'https://management.azure.com/user_impersonation' -ServicePrincipal -Credential $credential -Tenant $tenantId -UseAuthorizationCode
 $graphToken = New-PartnerAccessToken -ApplicationId $appId -Scopes 'https://graph.microsoft.com/Directory.AccessAsUser.All' -ServicePrincipal -Credential $credential -Tenant $tenantId -UseAuthorizationCode
--UseAuthorizationCode
 
 # Az Module
 Connect-AzAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -AccountId '<Your Account Id>'
