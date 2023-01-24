@@ -163,7 +163,7 @@ $tenantId = '<Your Tenant Id>'
 $credential = Get-Credential
 $pcToken = New-PartnerAccessToken -ApplicationId $appId -Credential $credential -RefreshToken $refreshToken -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Tenant $tenantId
 
-Connect-PartnerCenter -AccessToken $pcToken.AccessToken
+Connect-PartnerCenter -AccessToken $pcToken.AccessToken -TenantId $tenantId
 ```
 
 When you are prompted for credentials specify the application identifier and application secret, for the Azure AD application used when generating the refresh token.

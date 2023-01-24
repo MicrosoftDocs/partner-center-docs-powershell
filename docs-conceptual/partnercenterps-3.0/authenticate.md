@@ -35,7 +35,7 @@ Certificate-based authentication requires that Partner Center PowerShell can ret
 Connect-PartnerCenter -CertificateThumbprint '<thumbprint>' -ServicePrincipal -TenantId 'xxxx-xxxx-xxxx-xxxx'
 ```
 
-In PowerShell 5.1, the certificate store can be managed and inspected with the [PKI](/powershell/module/pkiclient) module. For PowerShell Core 6.x and later, the process is more complicated. The following scripts show you how to import an existing certificate into the certificate store accessible by PowerShell.
+In PowerShell 5.1, the certificate store can be managed and inspected with the [PKI](/powershell/module/pki) module. For PowerShell Core 6.x and later, the process is more complicated. The following scripts show you how to import an existing certificate into the certificate store accessible by PowerShell.
 
 #### Import a certificate in PowerShell 5.1
 

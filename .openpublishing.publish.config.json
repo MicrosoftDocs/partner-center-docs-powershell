@@ -28,7 +28,7 @@
   "sync_notification_subscribers": [],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/partner-center-docs-powershell",
-  "git_repository_branch_open_to_public_contributors": "master",
+  "git_repository_branch_open_to_public_contributors": "main",
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "contribution_branch_mappings": {},
@@ -36,10 +36,15 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     }
   ],
+  "branch_target_mapping": {
+    "live": [
+      "Publish"
+    ]
+  },
   "dependent_packages": [
     {
       "id": "Microsoft.DocAsCode.MAML2Yaml",
@@ -49,11 +54,6 @@
       "version": "latest"
     }
   ],
-  "branch_target_mapping": {
-    "live": [
-      "Publish"
-    ]
-  },
   "need_generate_pdf_url_template": false,
   "monikerPath": [
     "mapping/monikerMapping.json"
