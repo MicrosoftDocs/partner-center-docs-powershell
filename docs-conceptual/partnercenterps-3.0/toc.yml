@@ -7,13 +7,13 @@
   displayName: sign in, signin, log in, login, find, feedback, intro, introduction
 - name: Sign in
   items: 
-  - name: Authentication methods
+  - name: Authentication
     href: authenticate.md
     displayName: >-
       sign in, signin, log in, login, credentials, msi, managed identity,
       tenant, subscription, region, certificate, service principal,
       authenticate
-  - name: Multi-Factor Authentication
+  - name: Multifactor authentication
     href: multi-factor-auth.md
     displayName: mfa, secure application model, multi-factor auth, multi-factor authentication
   - name: Exchange Online with GDAP and App
