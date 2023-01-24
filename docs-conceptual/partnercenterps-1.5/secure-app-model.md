@@ -88,29 +88,28 @@ try {
         "$($Error[0].Exception)"
 }
 
-$adAppAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
+$aadGraphAppAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
     ResourceAppId = "00000002-0000-0000-c000-000000000000";
     ResourceAccess =
-    [Microsoft.Open.AzureAD.Model.ResourceAccess]@{
-        Id = "5778995a-e1bf-45b8-affa-663a9f3f4d04";
-        Type = "Role"},
-    [Microsoft.Open.AzureAD.Model.ResourceAccess]@{
-        Id = "a42657d6-7f20-40e3-b6f0-cee03008a62a";
-        Type = "Scope"},
-    [Microsoft.Open.AzureAD.Model.ResourceAccess]@{
-        Id = "311a71cc-e848-46a1-bdf8-97ff7156d8e6";
-        Type = "Scope"}
+        [Microsoft.Open.AzureAD.Model.ResourceAccess]@{
+            Id = "a42657d6-7f20-40e3-b6f0-cee03008a62a";
+            Type = "Scope"}
 }
 
 $graphAppAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
     ResourceAppId = "00000003-0000-0000-c000-000000000000";
     ResourceAccess =
         [Microsoft.Open.AzureAD.Model.ResourceAccess]@{
-            Id = "bf394140-e372-4bf9-a898-299cfc7564e5";
-            Type = "Role"},
+            Id = "0e263e50-5827-48a4-b97c-d940288653c7";
+            Type = "Scope"}
+}
+
+$azureAppAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
+    ResourceAppId = "797f4846-ba00-4fd7-ba43-dac1f8f63013";
+    ResourceAccess =
         [Microsoft.Open.AzureAD.Model.ResourceAccess]@{
-            Id = "7ab1d382-f21e-4acd-a863-ba3e13f7da61";
-            Type = "Role"}
+            Id = "41094075-9dad-400e-a0bd-54e686782033";
+            Type = "Scope"}
 }
 
 $partnerCenterAppAccess = [Microsoft.Open.AzureAD.Model.RequiredResourceAccess]@{
@@ -125,7 +124,7 @@ $SessionInfo = Get-AzureADCurrentSessionInfo
 
 Write-Host -ForegroundColor Green "Creating the Azure AD application and related resources..."
 
-$app = New-AzureADApplication -AvailableToOtherTenants $true -DisplayName $DisplayName -IdentifierUris "https://$($SessionInfo.TenantDomain)/$((New-Guid).ToString())" -RequiredResourceAccess $adAppAccess, $graphAppAccess, $partnerCenterAppAccess -ReplyUrls @("urn:ietf:wg:oauth:2.0:oob")
+$app = New-AzureADApplication -AvailableToOtherTenants $true -DisplayName $DisplayName -IdentifierUris "https://$($SessionInfo.TenantDomain)/$((New-Guid).ToString())" -RequiredResourceAccess $aadGraphAppAccess, $graphAppAccess, $azureAppAccess, $partnerCenterAppAccess -ReplyUrls @('urn:ietf:wg:oauth:2.0:oob', 'http://localhost:8400')
 $password = New-AzureADApplicationPasswordCredential -ObjectId $app.ObjectId
 $spn = New-AzureADServicePrincipal -AppId $app.AppId -DisplayName $DisplayName
 
@@ -143,8 +142,11 @@ Write-Host "ApplicationSecret   = $($password.Value)"
 Next you will need to invoke the [New-PartnerAccessToken](/powershell/module/partnercenter/new-partneraccesstoken) command as shown below to perform the consent process.
 
 ```powershell
+$appId = 'Enter the application ID here'
+$tenantId = '<Your Tenant Id>'
+
 $credential = Get-Credential
-$token = New-PartnerAccessToken -Consent -Credential $credential -Resource https://api.partnercenter.microsoft.com -TenantId '<Your Tenant Id>'
+$token = New-PartnerAccessToken -ApplicationId $appId -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Credential $credential -Tenant $tenantId -UseAuthorizationCode
 ```
 
 When the command is invoked, you will be prompted to enter a username and password. Specify the application identifier as the username and the application secret as the password. When then New-PartnerAccessToken command is invoked, you will be prompted for credentials once again. This time you will need to specify the credentials for the service account that you will be using. The service account should be a partner account with the appropriate permissions. After the successful execution of the command, you will find that the `$token` variable contains the response from Azure Active Directory for a token. In the response is a refresh token, you will want to store this value in a secure repository such as Azure Key Vault or a similar service.
@@ -155,10 +157,11 @@ Using the [Connect-PartnerCenter](/powershell/module/partnercenter/connect-partn
 
 ```powershell
 $refreshToken = 'Enter the refresh token value here'
+$appId = 'Enter the application ID here'
+$tenantId = '<Your Tenant Id>'
 
 $credential = Get-Credential
-$tenantId = '<Your Tenant Id>'
-$pcToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://api.partnercenter.microsoft.com -Credential $credential -TenantId $tenantId
+$pcToken = New-PartnerAccessToken -ApplicationId $appId -Credential $credential -RefreshToken $refreshToken -Scopes 'https://api.partnercenter.microsoft.com/user_impersonation' -ServicePrincipal -Tenant $tenantId
 
 Connect-PartnerCenter -AccessToken $pcToken.AccessToken -TenantId $tenantId
 ```
@@ -170,17 +173,19 @@ When you are prompted for credentials specify the application identifier and app
 The Az and AzureRM PowerShell modules both support the ability to authenticate using access tokens. The following commands demonstrate how to utilize a refresh token to obtain the required access token to connect using the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) or [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount) commands.
 
 ```powershell
-$credential = Get-Credential
-$refreshToken = 'Your-Refresh-Token-Value'
+$refreshToken = 'Enter the refresh token value here'
+$appId = 'Enter the application ID here'
+$tenantId = '<Your Tenant Id>'
 
-$azureToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://management.azure.com/ -Credential $credential -TenantId '<Your Tenant Id>'
-$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential -TenantId '<Your Tenant Id>'
+$credential = Get-Credential
+$azureToken = New-PartnerAccessToken -ApplicationId $appId -Scopes 'https://management.azure.com/user_impersonation' -ServicePrincipal -Credential $credential -Tenant $tenantId -UseAuthorizationCode
+$graphToken = New-PartnerAccessToken -ApplicationId $appId -Scopes 'https://graph.microsoft.com/Directory.AccessAsUser.All' -ServicePrincipal -Credential $credential -Tenant $tenantId -UseAuthorizationCode
 
 # Az Module
-Connect-AzAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
+Connect-AzAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -AccountId '<Your Account Id>'
 
 # AzureRM Module
-Connect-AzureRmAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -TenantId '<TenantId>'
+Connect-AzureRMAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $graphToken.AccessToken -AccountId '<Your Account Id>'
 ```
 
 ### MSOnline
@@ -188,11 +193,13 @@ Connect-AzureRmAccount -AccessToken $azureToken.AccessToken -GraphAccessToken $g
 The MSOnline PowerShell module support authentication using access tokens. The following commands demonstrate how to utilize the refresh token to obtain the required access token to connect using the [Connect-MsolService](/powershell/module/msonline/connect-msolservice) command.
 
 ```powershell
-$credential = Get-Credential
-$refreshToken = 'Your-Refresh-Token-Value'
+$refreshToken = 'Enter the refresh token value here'
+$appId = 'Enter the application ID here'
+$tenantId = '<Your Tenant Id>'
 
-$aadGraphToken = New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.windows.net -Credential $credential -TenantId '<Your Tenant Id>'
-$graphToken =  New-PartnerAccessToken -RefreshToken $refreshToken -Resource https://graph.microsoft.com -Credential $credential -TenantId '<Your Tenant Id>'
+$credential = Get-Credential
+$graphToken = New-PartnerAccessToken -ApplicationId $appId -Scopes 'https://graph.microsoft.com/Directory.AccessAsUser.All' -ServicePrincipal -Credential $credential -Tenant $tenantId -UseAuthorizationCode
+$aadGraphToken = New-PartnerAccessToken -ApplicationId $appId -Scopes 'https://graph.windows.net/Directory.AccessAsUser.All' -ServicePrincipal -Credential $credential -Tenant $tenantId -UseAuthorizationCode
 
 Connect-MsolService -AdGraphAccessToken $aadGraphToken.AccessToken -MsGraphAccessToken $graphToken.AccessToken
 ```
