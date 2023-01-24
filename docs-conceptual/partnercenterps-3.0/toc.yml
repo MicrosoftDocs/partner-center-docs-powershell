@@ -16,6 +16,8 @@
   - name: Multi-Factor Authentication
     href: multi-factor-auth.md
     displayName: mfa, secure application model, multi-factor auth, multi-factor authentication
+  - name: Exchange Online with GDAP and App
+    href: exchange-online-gdap-app.md
 - name: Releases
   items:
   - name: Release notes

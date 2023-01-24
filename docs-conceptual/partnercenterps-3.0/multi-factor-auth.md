@@ -1,7 +1,7 @@
 ---
 title: Partner Center multi-factor authentication using PowerShell 
 description: How to automate tasks in PowerShell when Multi-Factor Authentication is enforced.
-ms.date: 06/25/2020
+ms.date: 01/25/2023
 ---
 
 # Multi-Factor Authentication
@@ -88,35 +88,7 @@ Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId 'azureuser
 
 #### Exchange Online PowerShell
 
-When generating the initial refresh token, you will need to use following
-
-```powershell
-$token = New-PartnerAccessToken -Module ExchangeOnline
-``` 
-
-> [!IMPORTANT]
-> After invoking the commands above, you will find the refresh token value is available through `$token.RefreshToken`. This value should be stored in a secure repository such as [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) to ensure that is appropriately secure because it will be used instead of credentials.
-
-Use the following to generate a new access token using the refresh, and then create the session where you will connect to Exchange Online PowerShell
-
-```powershell
-$customerId = '<CustomerId>'
-$customerDomainName = '<CustomerDomainName>'
-$refreshToken = '<RefreshTokenValue>'
-$upn = '<UPN-used-to-generate-the-refresh-token>'
-
-$token = New-PartnerAccessToken -RefreshToken $token.RefreshToken -Scopes 'https://outlook.office365.com/.default' -Tenant $customerId -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716'
-
-$tokenValue = ConvertTo-SecureString "Bearer $($token.AccessToken)" -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential($upn, $tokenValue)
-
-$session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid?DelegatedOrg=$($customerDomainName)&BasicAuthToOAuthConversion=true" -Credential $credential -Authentication Basic -AllowRedirection
-
-Import-PSSession $session
-```
-
-> [!IMPORTANT]
-> The application identifier *a0c73c16-a7e3-4564-9a95-2bdf47383716* is for the Exchange Online PowerShell Azure Active Direcotry application. When requesting an access, or refresh, token for use with Exchange Online PowerShell you will need to use this value. 
+For more information about this scenario, see [Use Exchange Online PowerShell v3 with GDAP and App consent](exchange-online-gdap-app.md).
 
 #### MS Online
 
