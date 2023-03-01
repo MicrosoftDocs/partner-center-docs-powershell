@@ -49,6 +49,6 @@ $ExOgrant.EnterpriseApplicationID = "00000002-0000-0ff1-ce00-000000000000"
 $ExOgrant.Scope = "Exchange.Manage"
 New-PartnerCustomerApplicationConsent -ApplicationGrants @($MSGraphgrant, $ExOgrant) -CustomerId $CustomerTenantId -ApplicationId $AppId -DisplayName $appdisplayname
 #Connect to customer Exchange via App+User
-$token = New-PartnerAccessToken -ApplicationId $AppId -Scopes 'https://outlook.office365.com/.default' -ServicePrincipal -Credential $appcredential -Tenant $CustomerTenantId -UseAuthorizationCode
+$token = New-PartnerAccessToken -ApplicationId $AppId -Scopes 'https://outlook.office365.com/.default' -ServicePrincipal -Credential $appcredential -Tenant $CustomerTenantId -RefreshToken $PartnerAccesstoken.refreshToken
 Connect-ExchangeOnline -DelegatedOrganization $CustomerTenantId -AccessToken $token.AccessToken
 ```
