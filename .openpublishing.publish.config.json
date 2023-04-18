@@ -7,6 +7,7 @@
       "build_output_subfolder": "partnercenterps",
       "locale": "en-us",
       "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -29,9 +30,7 @@
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/partner-center-docs-powershell",
   "git_repository_branch_open_to_public_contributors": "main",
-  "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
-  "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
@@ -45,6 +44,9 @@
       "Publish"
     ]
   },
+  "docs_build_engine": {},
+  "skip_source_output_uploading": false,
+  "contribution_branch_mappings": {},
   "dependent_packages": [
     {
       "id": "Microsoft.DocAsCode.MAML2Yaml",
@@ -58,8 +60,5 @@
   "monikerPath": [
     "mapping/monikerMapping.json"
   ],
-  "dest": "_site",
-  "docs_build_engine": {
-    "name": "docfx_v3"
-  }
+  "dest": "_site"
 }
