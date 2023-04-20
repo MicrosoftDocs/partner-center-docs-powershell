@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/New-PartnerAzureSubscription.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version: https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAzureSubscription
+online version: https://learn.microsoft.com/powershell/module/partnercenter/New-PartnerAzureSubscription
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/New-PartnerAzureSubscription.md
 schema: 2.0.0
 ---

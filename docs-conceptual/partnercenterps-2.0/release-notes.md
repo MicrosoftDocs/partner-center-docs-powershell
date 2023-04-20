@@ -16,19 +16,19 @@ ms.date: 11/26/2019
 ## 2.0.1911.4 - November 2019
 
 * Azure
-  * Added the [Get-PartnerAzureBillingAccount](https://docs.microsoft.com/powershell/module/partnercenter/get-partnerazurebillingaccount) command to get billing accounts where the authenticated user has access
-  * Added the [Get-PartnerAzureBillingProfile](https://docs.microsoft.com/powershell/module/partnercenter/get-partnerazurebillingprofile) to get billing profiles for specified billing account
-  * Added the [New-PartnerAzureSubscription](https://docs.microsoft.com/powershell/module/partnercenter/new-partnerazuresubscription) to create a new Azure subscription for Microsoft Partner Agreement billing account.
+  * Added the [Get-PartnerAzureBillingAccount](/powershell/module/partnercenter/get-partnerazurebillingaccount) command to get billing accounts where the authenticated user has access
+  * Added the [Get-PartnerAzureBillingProfile](/powershell/module/partnercenter/get-partnerazurebillingprofile) to get billing profiles for specified billing account
+  * Added the [New-PartnerAzureSubscription](/powershell/module/partnercenter/new-partnerazuresubscription) to create a new Azure subscription for Microsoft Partner Agreement billing account.
 * Security
-  * Updated the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUser) command to ensure all user accounts are returned
-  * Updated the [Get-PartnerUserSignInActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to ensure all user sign-in activities are returned
+  * Updated the [Get-PartnerUser](/powershell/module/partnercenter/Get-PartnerUser) command to ensure all user accounts are returned
+  * Updated the [Get-PartnerUserSignInActivity](/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to ensure all user sign-in activities are returned
 
 ## 2.0.1911.3 - November 2019
 
 * Authentication
   * Addressed issue [#186](https://github.com/microsoft/Partner-Center-PowerShell/issues/186) that was preventing access token from being generated when using the device code flow
 * Security
-  * Addressed issue preventing the [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/test-partnersecurityrequirement) command from working as expected
+  * Addressed issue preventing the [Test-PartnerSecurityRequirement](/powershell/module/partnercenter/test-partnersecurityrequirement) command from working as expected
 
 ## 2.0.1911.2 - November 2019
 
@@ -47,17 +47,17 @@ ms.date: 11/26/2019
     * Added the *BillableQuantity*, *MeterDescription*, *PCToBCExchangeRateDate*, *PCToBCExchangeRate*, *PriceAdjustmentDescription*, and *PricingCurrency* properties
 * Product Upgrades
   * Added the Get-PartnerProductUpgrade command to get information on product upgrades for the specified customer
-  * Added the [Get-PartnerProductUpgradeEligibility](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgradeEligibility) command to determine if the specified customer has a product eligible for an upgrade
-  * Added the [Get-PartnerProductUpgradeStatus](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgradeStatus) command to get the status for product upgrades for the specified customer
-  * Added the [New-PartnerProductUpgrade](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerProductUpgrade) command to perform an upgrade for the specified customer
+  * Added the [Get-PartnerProductUpgradeEligibility](/powershell/module/partnercenter/Get-PartnerProductUpgradeEligibility) command to determine if the specified customer has a product eligible for an upgrade
+  * Added the [Get-PartnerProductUpgradeStatus](/powershell/module/partnercenter/Get-PartnerProductUpgradeStatus) command to get the status for product upgrades for the specified customer
+  * Added the [New-PartnerProductUpgrade](/powershell/module/partnercenter/New-PartnerProductUpgrade) command to perform an upgrade for the specified customer
 * Security
-  * Added the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUser) command to get partner user accounts
-    * Added the [Get-PartnerUserSignInActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to get sign-in activities for the specified user account
+  * Added the [Get-PartnerUser](/powershell/module/partnercenter/Get-PartnerUser) command to get partner user accounts
+    * Added the [Get-PartnerUserSignInActivity](/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to get sign-in activities for the specified user account
 * Subscriptions
-  * Added the [Get-PartnerCustomerAzurePlanEntitlement](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
+  * Added the [Get-PartnerCustomerAzurePlanEntitlement](/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
 * Usage
-  * Added the [Get-PartnerCustomerUsageRecord](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
-  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
+  * Added the [Get-PartnerCustomerUsageRecord](/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
+  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
 
 ## 2.0.1909.5 - September 2019
 

@@ -6,14 +6,14 @@ ms.date: 12/05/2019
 
 # Testing the Partner Security Requirements
 
-See [Partner Security Requirements](https://docs.microsoft.com/partner-center/partner-security-requirements) to learn more about the requirements. These requirements will be enforced by Azure Active Directory and Partner Center. To validate the account accessing resources was challenged for multi-factor authentication both platforms will be checking the [authentication method reference](https://tools.ietf.org/html/rfc8176) claim to see if MFA is listed.
+See [Partner Security Requirements](/partner-center/partner-security-requirements) to learn more about the requirements. These requirements will be enforced by Azure Active Directory and Partner Center. To validate the account accessing resources was challenged for multi-factor authentication both platforms will be checking the [authentication method reference](https://tools.ietf.org/html/rfc8176) claim to see if MFA is listed.
 
 > [!NOTE]
 > If you are using Azure Active Directory with Azure Multi-Factor Authentication, then the authentication method reference (AMR) claim will be present. However, if you have implemented a third-party solution there is a chance additional actions will need to be taken to ensure the claim is issued. You will need to work with the vendor of your third-party solution to determine what actions are will be required.
 
 ## Checking your account
 
-You can use the [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command to check if the authentication method reference claim is present and that it contains the MFA value. When you run this command, it will prompt you to authenticate, and the test will be performed using the authenticating account.
+You can use the [Test-PartnerSecurityRequirement](/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command to check if the authentication method reference claim is present and that it contains the MFA value. When you run this command, it will prompt you to authenticate, and the test will be performed using the authenticating account.
 
 If the claim is missing, the you will see a response similar to the following
 
@@ -53,7 +53,7 @@ pass
 
 ## Reacting to a failed test
 
-If the output from the [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command states the test failed, then you have additional actions that need to performed. Either the authentication method reference claim is missing or the MFA value was not listed. Both of these scenarios can happen even if the account was challenged for multi-factor authentication.
+If the output from the [Test-PartnerSecurityRequirement](/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command states the test failed, then you have additional actions that need to performed. Either the authentication method reference claim is missing or the MFA value was not listed. Both of these scenarios can happen even if the account was challenged for multi-factor authentication.
 
 > [!IMPORTANT]
 > When using a third-party solution, you will need to work with the vendor who developed the solution to determine what actions should be taken.
@@ -62,7 +62,7 @@ If you are using Active Directory Federation Service (ADFS), then you will need 
 
 ## Additional Information
 
-The [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command decodes the access token generated as a result of a successful authentication attempt. Next it will check if the authentication method reference (AMR) claim is present. If the claim is present, then it will confirm that the MFA value is listed. You can reproduce this test by decoding an access token using the [JWT Decoder](https://adfshelp.microsoft.com/JwtDecoder/GetToken) and checking the values listed in the AMR element.
+The [Test-PartnerSecurityRequirement](/powershell/module/partnercenter/Test-PartnerSecurityRequirement) command decodes the access token generated as a result of a successful authentication attempt. Next it will check if the authentication method reference (AMR) claim is present. If the claim is present, then it will confirm that the MFA value is listed. You can reproduce this test by decoding an access token using the [JWT Decoder](https://adfshelp.microsoft.com/JwtDecoder/GetToken) and checking the values listed in the AMR element.
 
 The following is an example of a decoded access token that correctly reflects the account was challenged for multi-factor authentication.
 

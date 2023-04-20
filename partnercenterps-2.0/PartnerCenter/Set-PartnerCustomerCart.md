@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerCustomerCart.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version: https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerCustomerCart
+online version: https://learn.microsoft.com/powershell/module/partnercenter/Set-PartnerCustomerCart
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerCustomerCart.md
 schema: 2.0.0
 ---

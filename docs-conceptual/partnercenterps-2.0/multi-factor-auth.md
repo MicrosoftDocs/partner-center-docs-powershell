@@ -89,7 +89,7 @@ Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId 'azureuser
 
 #### Exchange Online PowerShell
 
-When generating the initial refresh token, you will need to use `a0c73c16-a7e3-4564-9a95-2bdf47383716` for the application identifier. This is a native application that is correctly configured for use with Exchange Online PowerShell. Since it is a native application a public a flow like the [device code flow](https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows#device-code) must be used to obtain an access token.
+When generating the initial refresh token, you will need to use `a0c73c16-a7e3-4564-9a95-2bdf47383716` for the application identifier. This is a native application that is correctly configured for use with Exchange Online PowerShell. Since it is a native application a public a flow like the [device code flow](/azure/active-directory/develop/msal-authentication-flows#device-code) must be used to obtain an access token.
 
 ```powershell
 $token = New-PartnerAccessToken -ApplicationId 'a0c73c16-a7e3-4564-9a95-2bdf47383716' -Scopes 'https://outlook.office365.com/.default' -Tenant 'xxxx-xxxx-xxxx-xxxx' -UseDeviceAuthentication

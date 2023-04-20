@@ -7,7 +7,7 @@
     },
     {
       "source_path": "docs-conceptual/index.md",
-      "redirect_url": "https://docs.microsoft.com/powershell/partnercenter/overview",
+      "redirect_url": "/powershell/partnercenter/overview",
       "redirect_document_id": false
     }
   ]

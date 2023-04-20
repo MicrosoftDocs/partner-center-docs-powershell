@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerSupportProfile.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version: https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerSupportProfile
+online version: https://learn.microsoft.com/powershell/module/partnercenter/Get-PartnerSupportProfile
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Get-PartnerSupportProfile.md
 schema: 2.0.0
 ---

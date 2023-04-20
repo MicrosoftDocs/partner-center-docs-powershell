@@ -9,12 +9,12 @@ ms.date: 12/05/2019
 ## Release 3.0.1 - December 2019
 
 * Authentication
-  * [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) the `EnforceMfa` parameter has been removed
+  * [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) the `EnforceMfa` parameter has been removed
 
 ## Release 3.0.0 - December 2019
 
 * Subscription
-  * [Get-PartnerCustomerAzurePlanEntitlement](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) output has changed
+  * [Get-PartnerCustomerAzurePlanEntitlement](/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) output has changed
 
     ```output
     # Old
@@ -30,7 +30,7 @@ ms.date: 12/05/2019
     Microsoft Azure 9681cddd-4b96-4d67-96e5-399a827d5375 active 0d066578-66b7-40f6-afad-6e179df3ad80
     ```
 
-  * [New-PartnerAzureSubscription](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAzureSubscription) the `CustomerName` parameter will be replaced by the `CustomerId` parameter starting wth version 3.0.1
+  * [New-PartnerAzureSubscription](/powershell/module/partnercenter/New-PartnerAzureSubscription) the `CustomerName` parameter will be replaced by the `CustomerId` parameter starting wth version 3.0.1
 
     ```powershell
     # Old
@@ -43,7 +43,7 @@ ms.date: 12/05/2019
 ## Release 2.0.19101 - October 2019
 
 * Usage
-  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
+  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
 
 ## Release 2.0.1909.1 - September 2019
 

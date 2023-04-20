@@ -9,47 +9,47 @@ ms.date: 12/05/2019
 ## 3.0.6 - January 2020
 
 * Authentication 
-  * Addressed issue [#268](https://github.com/microsoft/Partner-Center-PowerShell/issues/268) that was impacting the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) command when trying to get an access token for Exchange Online with a refresh token
+  * Addressed issue [#268](https://github.com/microsoft/Partner-Center-PowerShell/issues/268) that was impacting the [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) command when trying to get an access token for Exchange Online with a refresh token
 * Agreements
-  * Addressed issue [#262](https://github.com/microsoft/Partner-Center-PowerShell/issues/262) that was preventing [Get-PartnerAgreementDocument](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerAgreementDocument) from being invoked when the `Language` parameter was specified
+  * Addressed issue [#262](https://github.com/microsoft/Partner-Center-PowerShell/issues/262) that was preventing [Get-PartnerAgreementDocument](/powershell/module/partnercenter/Get-PartnerAgreementDocument) from being invoked when the `Language` parameter was specified
 * Qualifications
-  * Addressed issue [#258](https://github.com/microsoft/Partner-Center-PowerShell/issues/258) with the [Set-PartnerCustomerQualification](https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerCustomerQualification) command that was preventing API exception information from being parsed as excepted
+  * Addressed issue [#258](https://github.com/microsoft/Partner-Center-PowerShell/issues/258) with the [Set-PartnerCustomerQualification](/powershell/module/partnercenter/Set-PartnerCustomerQualification) command that was preventing API exception information from being parsed as excepted
 
 ## 3.0.5 - January 2020
 
 * Authentication
-  * Addressed issue [#254](https://github.com/microsoft/Partner-Center-PowerShell/issues/254) with the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) where the Scope parameter was incorrectly being required
-  * Addressed an issue where NullReferenceException exception was being encountered when invoking [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) using a certificate
-  * Addressed an issue where NullReferenceException exception was being encountered when invoking [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) using a certificate
-  * Defined the refresh token parameter set for the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) command to make it easier to ensure all the appropriate parameters have been specified when exchanging a refresh token for an access token
+  * Addressed issue [#254](https://github.com/microsoft/Partner-Center-PowerShell/issues/254) with the [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) where the Scope parameter was incorrectly being required
+  * Addressed an issue where NullReferenceException exception was being encountered when invoking [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) using a certificate
+  * Addressed an issue where NullReferenceException exception was being encountered when invoking [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) using a certificate
+  * Defined the refresh token parameter set for the [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) command to make it easier to ensure all the appropriate parameters have been specified when exchanging a refresh token for an access token
 * Module
   * All commands now perform operations asynchronously
 
 ## 3.0.4 - January 2020
 
 * Authentication
-  * Addressed an issue where NullReferenceException exception was being encountered when invoking [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) using a certificate
-  * Addressed an issue where NullReferenceException exception was being encountered when invoking [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) using a certificate
-  * Defined the refresh token parameter set for the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) command to make it easier to ensure all the appropriate parameters have been specified when exchanging a refresh token for an access token
+  * Addressed an issue where NullReferenceException exception was being encountered when invoking [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) using a certificate
+  * Addressed an issue where NullReferenceException exception was being encountered when invoking [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) using a certificate
+  * Defined the refresh token parameter set for the [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) command to make it easier to ensure all the appropriate parameters have been specified when exchanging a refresh token for an access token
 * Module
   * All commands now perform operations asynchronously
 
 ## 3.0.3 - December 2019
 
 * Authentication
-  * Added the [Register-PartnerTokenCache](https://docs.microsoft.com/powershell/module/partnercenter/Register-PartnerTokenCache) to create, and delete, the control file that determines if a in-memory token cache should be used instead of the default persistent token cache
-  * Addressed an issue where an InvalidOperationException exception was being encountering with the [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) and [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) commands when specifying an environment
-  * Addressed an issue where an InvalidOperationException exception was being encountered under certain circumstances when invoking [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) and attempting to authenticate interactively
-  * Addressed issue [#234](https://github.com/microsoft/Partner-Center-PowerShell/issues/234) that was preventing the [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) command from executing successfully when being invoked through an Azure Function app
+  * Added the [Register-PartnerTokenCache](/powershell/module/partnercenter/Register-PartnerTokenCache) to create, and delete, the control file that determines if a in-memory token cache should be used instead of the default persistent token cache
+  * Addressed an issue where an InvalidOperationException exception was being encountering with the [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) and [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) commands when specifying an environment
+  * Addressed an issue where an InvalidOperationException exception was being encountered under certain circumstances when invoking [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) and attempting to authenticate interactively
+  * Addressed issue [#234](https://github.com/microsoft/Partner-Center-PowerShell/issues/234) that was preventing the [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) command from executing successfully when being invoked through an Azure Function app
 * Invoice
-  * Added the [Get-PartnerUnbilledInvoiceLineItem](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUnbilledInvoiceLineItem) command to get unbilled invoice line items
-  * Removed the `Period` parameter from the [Get-PartnerInvoiceLineItem](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerInvoiceLineItem) command because the functionality it enabled has been replaced with the [Get-PartnerUnbilledInvoiceLineItem](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUnbilledInvoiceLineItem) command
+  * Added the [Get-PartnerUnbilledInvoiceLineItem](/powershell/module/partnercenter/Get-PartnerUnbilledInvoiceLineItem) command to get unbilled invoice line items
+  * Removed the `Period` parameter from the [Get-PartnerInvoiceLineItem](/powershell/module/partnercenter/Get-PartnerInvoiceLineItem) command because the functionality it enabled has been replaced with the [Get-PartnerUnbilledInvoiceLineItem](/powershell/module/partnercenter/Get-PartnerUnbilledInvoiceLineItem) command
 * Network
-  * Addressed an issue where the HTTP response from [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUser) and [Get-PartnerUserSignInActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignInActivity) was not being correctly written to the debug pipeline
+  * Addressed an issue where the HTTP response from [Get-PartnerUser](/powershell/module/partnercenter/Get-PartnerUser) and [Get-PartnerUserSignInActivity](/powershell/module/partnercenter/Get-PartnerUserSignInActivity) was not being correctly written to the debug pipeline
 * Product Upgrades
   * Addressed an issue with starting the upgrade process for an Azure Plan
 * Subscription
-  * Added the `PartnerId` parameter to the [Set-PartnerCustomerSubscription](https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerCustomerSubscription) command
+  * Added the `PartnerId` parameter to the [Set-PartnerCustomerSubscription](/powershell/module/partnercenter/Set-PartnerCustomerSubscription) command
   * Addressed issue [#228](https://github.com/microsoft/Partner-Center-PowerShell/issues/228) that was causing issues with enabling and suspend an Azure subscription that is part of an Azure Plan
 
 ## 3.0.2 - December 2019
@@ -60,45 +60,45 @@ ms.date: 12/05/2019
 ## 3.0.1 - December 2019
 
 * Authentication
-  * Updating the [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) command to make the `CertificateThumbprint` parameter required for the `ServicePrincipalCertificate` parameter set
+  * Updating the [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) command to make the `CertificateThumbprint` parameter required for the `ServicePrincipalCertificate` parameter set
 * Security
-  * Addressed issue [#194](https://github.com/microsoft/Partner-Center-PowerShell/issues/194) that was preventing the [Get-PartnerUserSignInActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command from executing as expected in all scenarios
+  * Addressed issue [#194](https://github.com/microsoft/Partner-Center-PowerShell/issues/194) that was preventing the [Get-PartnerUserSignInActivity](/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command from executing as expected in all scenarios
 * Subscription
-  * Added [Enable-PartnerAzureSubscription](https://docs.microsoft.com/powershell/module/partnercenter/Enable-PartnerAzureSubscription) command to enable a suspend Azure subscription that is part of an Azure Plan
-  * Added [Suspend-PartnerAzureSubscription](https://docs.microsoft.com/powershell/module/partnercenter/Suspend-PartnerAzureSubscription) command to suspend an Azure subscription that is part of an Azure Plan
-  * Removed the `CustomerName` parameter from the [New-PartnerAzureSubscription](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAzureSubscription)
+  * Added [Enable-PartnerAzureSubscription](/powershell/module/partnercenter/Enable-PartnerAzureSubscription) command to enable a suspend Azure subscription that is part of an Azure Plan
+  * Added [Suspend-PartnerAzureSubscription](/powershell/module/partnercenter/Suspend-PartnerAzureSubscription) command to suspend an Azure subscription that is part of an Azure Plan
+  * Removed the `CustomerName` parameter from the [New-PartnerAzureSubscription](/powershell/module/partnercenter/New-PartnerAzureSubscription)
 
 ## 3.0.0 - December 2019
 
 * Agreement
-  * Added the [Get-PartnerAgreementStatus](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerAgreementStatus) command to get the status of acceptance of the Microsoft Partner Agreement for the specified partner
+  * Added the [Get-PartnerAgreementStatus](/powershell/module/partnercenter/Get-PartnerAgreementStatus) command to get the status of acceptance of the Microsoft Partner Agreement for the specified partner
 * Authentication
-  * Updated how [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) writes warnings during an authentication attempt
-  * Updated how [New-PartnerAccessToken](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerAccessToken) prompts for interaction
-  * When using [Connect-PartnerCenter](https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter) with an access token the account and tenant information are now extracted from the access token
+  * Updated how [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) writes warnings during an authentication attempt
+  * Updated how [New-PartnerAccessToken](/powershell/module/partnercenter/New-PartnerAccessToken) prompts for interaction
+  * When using [Connect-PartnerCenter](/powershell/module/partnercenter/Connect-PartnerCenter) with an access token the account and tenant information are now extracted from the access token
 * Azure
-  * Added the [Get-PartnerAzureBillingPolicy](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerAzureBillingPolicy) to get the billing policy for the specified customer
-  * Added the [Set-PartnerAzureBillingPolicy](https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerAzureBillingPolicy) to update the billing policy for the specified customer
+  * Added the [Get-PartnerAzureBillingPolicy](/powershell/module/partnercenter/Get-PartnerAzureBillingPolicy) to get the billing policy for the specified customer
+  * Added the [Set-PartnerAzureBillingPolicy](/powershell/module/partnercenter/Set-PartnerAzureBillingPolicy) to update the billing policy for the specified customer
 * Build
   * Updating the test project from .NET Core 2.2 to .NET 3.0
 * Dependency
   * Updated to the latest version of the Partner Center SDK for .NET
 * Invoice
-  * Added the `Period` parameter to the [Get-PartnerInvoiceLineItem](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerInvoiceLineItem) command to provide a way for the user to specify if they want the current or previous unbilled line items
+  * Added the `Period` parameter to the [Get-PartnerInvoiceLineItem](/powershell/module/partnercenter/Get-PartnerInvoiceLineItem) command to provide a way for the user to specify if they want the current or previous unbilled line items
   * Addressed issue [#202](https://github.com/microsoft/Partner-Center-PowerShell/issues/202) that was returning request for invoice line items with no errors
 * Module
   * Addressed issue [#217](https://github.com/microsoft/Partner-Center-PowerShell/issues/217) that was impacting executing commands through Azure Automation
   * Updated the transient error strategy for network operations
   * When running any command with with the `Debug` parameter the request and response from the API will be written to the console in addition to any operation specific debug information
 * Security
-  * Modified the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUser) command to leverage a task scheduler for requesting from Microsoft Graph
-  * Modified the [Get-PartnerUserSignInActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to leverage a task scheduler for requesting from Microsoft Graph
-  * Updated how [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerSecurityRequirement) prompts for interaction
+  * Modified the [Get-PartnerUser](/powershell/module/partnercenter/Get-PartnerUser) command to leverage a task scheduler for requesting from Microsoft Graph
+  * Modified the [Get-PartnerUserSignInActivity](/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to leverage a task scheduler for requesting from Microsoft Graph
+  * Updated how [Test-PartnerSecurityRequirement](/powershell/module/partnercenter/Test-PartnerSecurityRequirement) prompts for interaction
 * Subscription
   * Addressed an issue where the request for subscriptions by partner was causing an `InvalidCastException` to be thrown
-  * Corrected the output for the [Get-PartnerCustomerAzurePlanEntitlement](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command
+  * Corrected the output for the [Get-PartnerCustomerAzurePlanEntitlement](/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command
 * Validation
-  * Addressed a scenario where a `NullReferenceException` could be thrown when running the [Test-PartnerAddress](https://docs.microsoft.com/powershell/module/partnercenter/Test-PartnerAddress) command
+  * Addressed a scenario where a `NullReferenceException` could be thrown when running the [Test-PartnerAddress](/powershell/module/partnercenter/Test-PartnerAddress) command
 
 ## 2.0.1911.5 - November 2019
 
@@ -109,19 +109,19 @@ ms.date: 12/05/2019
 ## 2.0.1911.4 - November 2019
 
 * Azure
-  * Added the [Get-PartnerAzureBillingAccount](https://docs.microsoft.com/powershell/module/partnercenter/get-partnerazurebillingaccount) command to get billing accounts where the authenticated user has access
-  * Added the [Get-PartnerAzureBillingProfile](https://docs.microsoft.com/powershell/module/partnercenter/get-partnerazurebillingprofile) to get billing profiles for specified billing account
-  * Added the [New-PartnerAzureSubscription](https://docs.microsoft.com/powershell/module/partnercenter/new-partnerazuresubscription) to create a new Azure subscription for Microsoft Partner Agreement billing account.
+  * Added the [Get-PartnerAzureBillingAccount](/powershell/module/partnercenter/get-partnerazurebillingaccount) command to get billing accounts where the authenticated user has access
+  * Added the [Get-PartnerAzureBillingProfile](/powershell/module/partnercenter/get-partnerazurebillingprofile) to get billing profiles for specified billing account
+  * Added the [New-PartnerAzureSubscription](/powershell/module/partnercenter/new-partnerazuresubscription) to create a new Azure subscription for Microsoft Partner Agreement billing account.
 * Security
-  * Updated the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUser) command to ensure all user accounts are returned
-  * Updated the [Get-PartnerUserSignInActivity](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to ensure all user sign-in activities are returned
+  * Updated the [Get-PartnerUser](/powershell/module/partnercenter/Get-PartnerUser) command to ensure all user accounts are returned
+  * Updated the [Get-PartnerUserSignInActivity](/powershell/module/partnercenter/Get-PartnerUserSignInActivity) command to ensure all user sign-in activities are returned
 
 ## 2.0.1911.3 - November 2019
 
 * Authentication
   * Addressed issue [#186](https://github.com/microsoft/Partner-Center-PowerShell/issues/186) that was preventing access token from being generated when using the device code flow
 * Security
-  * Addressed issue preventing the [Test-PartnerSecurityRequirement](https://docs.microsoft.com/powershell/module/partnercenter/test-partnersecurityrequirement) command from working as expected
+  * Addressed issue preventing the [Test-PartnerSecurityRequirement](/powershell/module/partnercenter/test-partnersecurityrequirement) command from working as expected
 
 ## 2.0.1911.2 - November 2019
 
@@ -140,17 +140,17 @@ ms.date: 12/05/2019
     * Added the *BillableQuantity*, *MeterDescription*, *PCToBCExchangeRateDate*, *PCToBCExchangeRate*, *PriceAdjustmentDescription*, and *PricingCurrency* properties
 * Product Upgrades
   * Added the Get-PartnerProductUpgrade command to get information on product upgrades for the specified customer
-  * Added the [Get-PartnerProductUpgradeEligibility](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgradeEligibility) command to determine if the specified customer has a product eligible for an upgrade
-  * Added the [Get-PartnerProductUpgradeStatus](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerProductUpgradeStatus) command to get the status for product upgrades for the specified customer
-  * Added the [New-PartnerProductUpgrade](https://docs.microsoft.com/powershell/module/partnercenter/New-PartnerProductUpgrade) command to perform an upgrade for the specified customer
+  * Added the [Get-PartnerProductUpgradeEligibility](/powershell/module/partnercenter/Get-PartnerProductUpgradeEligibility) command to determine if the specified customer has a product eligible for an upgrade
+  * Added the [Get-PartnerProductUpgradeStatus](/powershell/module/partnercenter/Get-PartnerProductUpgradeStatus) command to get the status for product upgrades for the specified customer
+  * Added the [New-PartnerProductUpgrade](/powershell/module/partnercenter/New-PartnerProductUpgrade) command to perform an upgrade for the specified customer
 * Security
-  * Added the [Get-PartnerUser](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerUser) command to get partner user accounts
+  * Added the [Get-PartnerUser](/powershell/module/partnercenter/Get-PartnerUser) command to get partner user accounts
     * Added the Get-PartnerUserSignInActivity command to get sign-in activities for the specified user account
 * Subscriptions
-  * Added the [Get-PartnerCustomerAzurePlanEntitlement](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
+  * Added the [Get-PartnerCustomerAzurePlanEntitlement](/powershell/module/partnercenter/Get-PartnerCustomerAzurePlanEntitlement) command to get entitlement information for an Azure Plan
 * Usage
-  * Added the [Get-PartnerCustomerUsageRecord](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
-  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](https://docs.microsoft.com/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
+  * Added the [Get-PartnerCustomerUsageRecord](/powershell/module/partnercenter/Get-PartnerCustomerUsageRecord) command to get month usage records for all customers
+  * Removed the `Get-PartnerCustomerSubscriptionUsage` command due to changes with the Partner Center SDK for .NET. This command will be replaced with the [Get-PartnerCustomerSubscriptionMeterUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionMeterUsage) and [Get-PartnerCustomerSubscriptionResourceUsage](/powershell/module/partnercenter/Get-PartnerCustomerSubscriptionResourceUsage) commands
 
 ## 2.0.1909.5 - September 2019
 

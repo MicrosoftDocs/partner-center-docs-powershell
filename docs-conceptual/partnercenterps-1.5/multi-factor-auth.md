@@ -8,7 +8,7 @@ ms.date: 05/17/2019
 
 Multi-Factor Authentication (MFA) helps safeguard access to data and applications while maintaining simplicity for users. It provides additional security by requiring a second form of authentication and delivers strong authentication through a range of easy to use authentication methods. Users may or may not be challenged for Multi-Factor Authentication based on configuration decisions that an administrator makes. The requirement for Multi-Factor Authentication can complicate any automation that you have developed because a second form of authentication must be provided when authenticating.
 
-Azure Active Directory has recently introduced a new feature known as baseline protection. Baseline protection is a set of predefined [conditional access policies](https://docs.microsoft.com/azure/active-directory/conditional-access/overview). The goal of these policies is to ensure that you have at least the baseline level of security enabled in all editions of Azure Active Directory. Through the enforcement of these policies users who meet the criteria of the baseline policy will be required to authenticate using Multi-Factor Authentication.
+Azure Active Directory has recently introduced a new feature known as baseline protection. Baseline protection is a set of predefined [conditional access policies](/azure/active-directory/conditional-access/overview). The goal of these policies is to ensure that you have at least the baseline level of security enabled in all editions of Azure Active Directory. Through the enforcement of these policies users who meet the criteria of the baseline policy will be required to authenticate using Multi-Factor Authentication.
 
 With the requirement for Multi-Factor Authentication you will face a new challenge when automating tasks in a headless manner. This article covers how to utilize the [Secure Application Model](secure-app-model.md) to establish a connection to the following PowerShell modules without being prompted for credentials.
 
@@ -51,7 +51,7 @@ Connect-AzureAD -AadAccessToken $aadGraphToken.AccessToken -AccountId '<UPN-OF-U
 
 ### Exchange Online PowerShell
 
-When MFA is enabled partners will not be able to utilize their delegated administrative privileges with Exchange Online PowerShell to perform actions against their customers. See [Connect to Exchange Online PowerShell using multi-factor authentication](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell) for more information regarding this limitation.
+When MFA is enabled partners will not be able to utilize their delegated administrative privileges with Exchange Online PowerShell to perform actions against their customers. See [Connect to Exchange Online PowerShell using multi-factor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell) for more information regarding this limitation.
 
 ### MS Online
 

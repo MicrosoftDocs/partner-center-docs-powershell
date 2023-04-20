@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Connect-PartnerCenter.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version: https://docs.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter
+online version: https://learn.microsoft.com/powershell/module/partnercenter/Connect-PartnerCenter
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Connect-PartnerCenter.md
 schema: 2.0.0
 ---
@@ -71,7 +71,7 @@ PS C:\> $refreshToken = '<refreshToken>'
 PS C:\> Connect-PartnerCenter -ApplicationId 'xxxx-xxxx-xxxx-xxxx' -RefreshToken $refreshToken
 ```
 
-Connects to Partner Center using a refresh token that was generated using a [native application](https://docs.microsoft.com/azure/active-directory/develop/native-app).
+Connects to Partner Center using a refresh token that was generated using a [native application](/azure/active-directory/develop/native-app).
 
 ### Example 4
 ```powershell
@@ -85,7 +85,7 @@ PS C:\>
 PS C:\> Connect-PartnerCenter -ApplicationId $appId -Credential $credential -RefreshToken $refreshToken
 ```
 
-Connects to Partner Center using a refresh token that was generated using a [web application](https://docs.microsoft.com/azure/active-directory/develop/web-app).
+Connects to Partner Center using a refresh token that was generated using a [web application](/azure/active-directory/develop/web-app).
 
 ## PARAMETERS
 

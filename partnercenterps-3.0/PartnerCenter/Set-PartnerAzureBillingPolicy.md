@@ -2,7 +2,7 @@
 content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerAzureBillingPolicy.md
 external help file: Microsoft.Store.PartnerCenter.PowerShell.dll-Help.xml
 Module Name: PartnerCenter
-online version: https://docs.microsoft.com/powershell/module/partnercenter/Set-PartnerAzureBillingPolicy
+online version: https://learn.microsoft.com/powershell/module/partnercenter/Set-PartnerAzureBillingPolicy
 original_content_git_url: https://github.com/Microsoft/Partner-Center-PowerShell/blob/master/docs/help/Set-PartnerAzureBillingPolicy.md
 schema: 2.0.0
 ---
