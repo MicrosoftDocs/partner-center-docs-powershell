@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -CountryCode
-The country ISO2 code.
+The country/region ISO2 code.
 
 ```yaml
 Type: String

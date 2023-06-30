@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -CountryCode
-The country on which to base the product.
+The country/region on which to base the product.
 
 ```yaml
 Type: String

@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -BillingAddressCountry
-The country of the customer's billing address.
+The country/region of the customer's billing address.
 
 ```yaml
 Type: String

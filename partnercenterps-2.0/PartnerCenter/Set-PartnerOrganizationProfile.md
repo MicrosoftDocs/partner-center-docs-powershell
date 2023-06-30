@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Country
-The country portion of the address.
+The country/region portion of the address.
 
 ```yaml
 Type: String

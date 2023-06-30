@@ -10,7 +10,7 @@ schema: 2.0.0
 # Get-PartnerCountryValidation
 
 ## SYNOPSIS
-Gets the rules for validating an address for a specific country.
+Gets the rules for validating an address for a specific country/region.
 
 ## SYNTAX
 

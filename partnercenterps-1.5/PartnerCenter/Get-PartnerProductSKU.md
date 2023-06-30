@@ -44,7 +44,7 @@ Gets the available SKUs for the product with the identifier of DZH318Z0BQ5S.
 ## PARAMETERS
 
 ### -CountryCode
-The country ISO2 code.
+The country/region ISO2 code.
 
 ```yaml
 Type: String

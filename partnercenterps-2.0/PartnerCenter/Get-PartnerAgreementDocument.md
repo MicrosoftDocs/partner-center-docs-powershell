@@ -33,7 +33,7 @@ Gets the links to download or view the Microsoft Customer Agreement template.
 ## PARAMETERS
 
 ### -Country
-The country of the agreement document.
+The country/region of the agreement document.
 
 ```yaml
 Type: String

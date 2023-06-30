@@ -35,7 +35,7 @@ Checks the inventory for the specified product.
 ## PARAMETERS
 
 ### -CountryCode
-The country ISO2 code.
+The country/region ISO2 code.
 
 ```yaml
 Type: String

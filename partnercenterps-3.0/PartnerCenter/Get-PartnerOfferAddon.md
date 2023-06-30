@@ -19,7 +19,7 @@ Get-PartnerOfferAddon [-CountryCode <String>] [-OfferId] <String> [<CommonParame
 ```
 
 ## DESCRIPTION
-Gets the add-ons for an offer by country and offer identifier.
+Gets the add-ons for an offer by country/region and offer identifier.
 
 ## EXAMPLES
 

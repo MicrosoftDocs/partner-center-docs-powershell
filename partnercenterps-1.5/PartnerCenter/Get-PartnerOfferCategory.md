@@ -28,12 +28,12 @@ Gets a list of offer categories.
 PS C:\> Get-PartnerOfferCategory -CountryCode 'US'
 ```
 
-Gets a list of offer categories for the specified country.
+Gets a list of offer categories for the specified country/region.
 
 ## PARAMETERS
 
 ### -CountryCode
-The country ISO2 code.
+The country/region ISO2 code.
 
 ```yaml
 Type: String

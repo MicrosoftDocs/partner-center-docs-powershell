@@ -36,7 +36,7 @@ Gets real-time prices for an Azure offer.
 Gets the partner's billing profile.
 
 ### [Get-PartnerCountryValidation](Get-PartnerCountryValidation.md)
-Gets the rules for validating an address for a specific country.
+Gets the rules for validating an address for a specific country/region.
 
 ### [Get-PartnerCustomer](Get-PartnerCustomer.md)
 Gets a specific customer or a list of available customers.

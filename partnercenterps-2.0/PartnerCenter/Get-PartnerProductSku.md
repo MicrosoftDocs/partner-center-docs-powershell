@@ -47,7 +47,7 @@ Gets the available SKUs for the specified product.
 ## PARAMETERS
 
 ### -CountryCode
-The country on which to base the product.
+The country/region on which to base the product.
 
 ```yaml
 Type: String
