@@ -6,7 +6,7 @@ ms.date: 01/24/2023
 
 # Use the Exchange Online PowerShell v3 Module with GDAP and App Consent
 
-If you are not already familiar with how GDAP changes the Secure App Model, read the [GDAP to DAP Secure Application Model document](https://aka.ms/gdap-sam).
+If you are not already familiar with how GDAP changes the Secure App Model, read the [DAP to GDAP Secure Application Model document](https://aka.ms/gdap-sam).
 
 ## Prerequisites
 
